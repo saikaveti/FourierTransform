@@ -1,0 +1,1 @@
+This is an Independent Study for MTH 280
