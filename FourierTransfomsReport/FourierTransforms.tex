@@ -69,7 +69,6 @@ The intuition behind a Fourier Series is very similar to a Taylor or MacLaurin S
 \indent Similar to colors, given a complex wave, it is important to know the frequencies that compose that wave. The inverse of this can also provide us with valuable information. A wave $f(x)$ exists in real space, and its equivalent in frequency space is function $F(s)$. In short, $f(x)$ gives us a complex wave in real space, while $F(s)$ gives us a function with peaks at the frequencies that make up $f(x)$.
 
 As described in \textit{The Fourier Transforms and Its Applications}, the following relationship between F(s) and f(x) exists:
-
 \begin{align*}
 \intertext{The Fourier Transform:}
 F(s)  &= \int_{-\infty}^{\infty} f(x) e^{-i2 \pi x s}dx
@@ -78,7 +77,6 @@ f(x)  &= \int_{-\infty}^{\infty} F(s) e^{i2 \pi x s}ds
 \end{align*}
 
 Replacing any instances of $e^{i\theta}$ with $cos(\theta) + isin(\theta)$, we can derive the following equivalent expressions:
-
 \begin{align*}
 \intertext{The Fourier Transform:}
 F(s)  &= \int_{-\infty}^{\infty} f(x) (cos(-2 \pi x s) + isin(-2 \pi x s))dx
