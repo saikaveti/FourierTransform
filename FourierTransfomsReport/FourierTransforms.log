@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  31 MAR 2019 18:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  31 MAR 2019 19:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -430,96 +430,98 @@ e
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 142.
  [4] [5]
-<FFTOriginal1.png, id=72, 462.528pt x 346.896pt>
-File: FFTOriginal1.png Graphic file (type png)
-<use FFTOriginal1.png>
-Package pdftex.def Info: FFTOriginal1.png  used on input line 234.
+<images/FFTOriginal1.png, id=72, 462.528pt x 346.896pt>
+File: images/FFTOriginal1.png Graphic file (type png)
+<use images/FFTOriginal1.png>
+Package pdftex.def Info: images/FFTOriginal1.png  used on input line 234.
 (pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
-<FFTResult1.png, id=74, 462.528pt x 346.896pt>
-File: FFTResult1.png Graphic file (type png)
-<use FFTResult1.png>
-Package pdftex.def Info: FFTResult1.png  used on input line 240.
+<images/FFTResult1.png, id=74, 462.528pt x 346.896pt>
+File: images/FFTResult1.png Graphic file (type png)
+<use images/FFTResult1.png>
+Package pdftex.def Info: images/FFTResult1.png  used on input line 240.
 (pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
-<FFTOriginal2.png, id=75, 462.528pt x 346.896pt>
-File: FFTOriginal2.png Graphic file (type png)
-<use FFTOriginal2.png>
-Package pdftex.def Info: FFTOriginal2.png  used on input line 253.
+<images/FFTOriginal2.png, id=75, 462.528pt x 346.896pt>
+File: images/FFTOriginal2.png Graphic file (type png)
+<use images/FFTOriginal2.png>
+Package pdftex.def Info: images/FFTOriginal2.png  used on input line 253.
 (pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
-<FFTResult2.png, id=76, 462.528pt x 346.896pt>
-File: FFTResult2.png Graphic file (type png)
-<use FFTResult2.png>
-Package pdftex.def Info: FFTResult2.png  used on input line 259.
+<images/FFTResult2.png, id=76, 462.528pt x 346.896pt>
+File: images/FFTResult2.png Graphic file (type png)
+<use images/FFTResult2.png>
+Package pdftex.def Info: images/FFTResult2.png  used on input line 259.
 (pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
-<FFTOriginal3.png, id=77, 462.528pt x 346.896pt>
-File: FFTOriginal3.png Graphic file (type png)
-<use FFTOriginal3.png>
-Package pdftex.def Info: FFTOriginal3.png  used on input line 271.
+<images/FFTOriginal3.png, id=77, 462.528pt x 346.896pt>
+File: images/FFTOriginal3.png Graphic file (type png)
+<use images/FFTOriginal3.png>
+Package pdftex.def Info: images/FFTOriginal3.png  used on input line 271.
 (pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
-<FFTResult3.png, id=78, 462.528pt x 346.896pt>
-File: FFTResult3.png Graphic file (type png)
-<use FFTResult3.png>
-Package pdftex.def Info: FFTResult3.png  used on input line 277.
+<images/FFTResult3.png, id=78, 462.528pt x 346.896pt>
+File: images/FFTResult3.png Graphic file (type png)
+<use images/FFTResult3.png>
+Package pdftex.def Info: images/FFTResult3.png  used on input line 277.
 (pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[6 <./FFTOriginal1.png> <./FFTResult1.png> <./FFTOriginal2.png> <./FFTResult2.p
-ng>] [7 <./FFTOriginal3.png> <./FFTResult3.png>]
-<gamma.png, id=105, 257.96375pt x 220.825pt>
-File: gamma.png Graphic file (type png)
-<use gamma.png>
-Package pdftex.def Info: gamma.png  used on input line 332.
+[6 <./images/FFTOriginal1.png> <./images/FFTResult1.png> <./images/FFTOriginal2
+.png> <./images/FFTResult2.png>] [7 <./images/FFTOriginal3.png> <./images/FFTRe
+sult3.png>]
+<images/gamma.png, id=105, 257.96375pt x 220.825pt>
+File: images/gamma.png Graphic file (type png)
+<use images/gamma.png>
+Package pdftex.def Info: images/gamma.png  used on input line 332.
 (pdftex.def)             Requested size: 64.49077pt x 55.2061pt.
-<xray.png, id=106, 253.94875pt x 207.77625pt>
-File: xray.png Graphic file (type png)
-<use xray.png>
-Package pdftex.def Info: xray.png  used on input line 338.
+<images/xray.png, id=106, 253.94875pt x 207.77625pt>
+File: images/xray.png Graphic file (type png)
+<use images/xray.png>
+Package pdftex.def Info: images/xray.png  used on input line 338.
 (pdftex.def)             Requested size: 63.48703pt x 51.94392pt.
-<uv.png, id=107, 253.94875pt x 250.9375pt>
-File: uv.png Graphic file (type png)
-<use uv.png>
-Package pdftex.def Info: uv.png  used on input line 344.
+<images/uv.png, id=107, 253.94875pt x 250.9375pt>
+File: images/uv.png Graphic file (type png)
+<use images/uv.png>
+Package pdftex.def Info: images/uv.png  used on input line 344.
 (pdftex.def)             Requested size: 63.48703pt x 62.7342pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [8]
-<dftimage1.png, id=117, 250.9375pt x 187.70125pt>
-File: dftimage1.png Graphic file (type png)
-<use dftimage1.png>
-Package pdftex.def Info: dftimage1.png  used on input line 368.
+<images/dftimage1.png, id=117, 250.9375pt x 187.70125pt>
+File: images/dftimage1.png Graphic file (type png)
+<use images/dftimage1.png>
+Package pdftex.def Info: images/dftimage1.png  used on input line 368.
 (pdftex.def)             Requested size: 80.30164pt x 60.06561pt.
-<dftimage2.png, id=118, 245.91875pt x 183.68625pt>
-File: dftimage2.png Graphic file (type png)
-<use dftimage2.png>
-Package pdftex.def Info: dftimage2.png  used on input line 374.
+<images/dftimage2.png, id=118, 245.91875pt x 183.68625pt>
+File: images/dftimage2.png Graphic file (type png)
+<use images/dftimage2.png>
+Package pdftex.def Info: images/dftimage2.png  used on input line 374.
 (pdftex.def)             Requested size: 78.6956pt x 58.78079pt.
-<dftimage3.png, id=119, 302.12875pt x 224.84pt>
-File: dftimage3.png Graphic file (type png)
-<use dftimage3.png>
-Package pdftex.def Info: dftimage3.png  used on input line 380.
+<images/dftimage3.png, id=119, 302.12875pt x 224.84pt>
+File: images/dftimage3.png Graphic file (type png)
+<use images/dftimage3.png>
+Package pdftex.def Info: images/dftimage3.png  used on input line 380.
 (pdftex.def)             Requested size: 75.532pt x 56.20985pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 388.
- [9 <./gamma.png> <./xray.png> <./uv.png> <./dftimage1.png> <./dftimage2.png> <
-./dftimage3.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 388.
- (./FourierTransforms.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 388.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 388.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 390.
+ [9 <./images/gamma.png> <./images/xray.png> <./images/uv.png> <./images/dftima
+ge1.png> <./images/dftimage2.png> <./images/dftimage3.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 390.
+
+(./FourierTransforms.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 390.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 390.
 Package rerunfilecheck Info: File `FourierTransforms.out' has not changed.
 (rerunfilecheck)             Checksum: 1BC1F8080A3F4AD36C1F54681679B946;289.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 388.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 390.
  ) 
 Here is how much of TeX's memory you used:
- 8568 strings out of 492649
- 126635 string characters out of 6129622
- 221669 words of memory out of 5000000
+ 8569 strings out of 492649
+ 126978 string characters out of 6129622
+ 221661 words of memory out of 5000000
  12144 multiletter control sequences out of 15000+600000
  11669 words of font info for 45 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
@@ -540,7 +542,7 @@ ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/
 018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/201
 8/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2018
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on FourierTransforms.pdf (9 pages, 1491938 bytes).
+Output written on FourierTransforms.pdf (9 pages, 1492768 bytes).
 PDF statistics:
  197 PDF objects out of 1000 (max. 8388607)
  144 compressed objects within 2 object streams
