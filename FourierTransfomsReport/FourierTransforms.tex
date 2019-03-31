@@ -8,6 +8,7 @@
 \usepackage{url}
 \usepackage{tabto}
 \usepackage{fancyvrb}
+\usepackage{setspace}
 
 \usepackage{caption}
 \usepackage{subcaption}
@@ -22,7 +23,7 @@
 \def\BState{\State\hskip-\ALG@thistlm}
 \makeatother
 
-
+\setcounter{tocdepth}{1}
 
 \title{The Fourier Transform: Variations and Applications}
 
@@ -31,6 +32,10 @@
 \begin{document}
 
 \maketitle
+
+
+\tableofcontents
+\newpage
 
 \section{The Fourier Transform}
 
@@ -89,6 +94,22 @@ As a result, we can see a resemblance of a non-discretized version of the Fourie
 \section{The Discrete Fourier Transform}
 
 \subsection{The Basics of the Discrete Fourier Transform}
+
+\mbox{}	 \\
+\indent As the name suggests, the Discrete Fourier Transform (DFT) is a discretized, more applicable version of the regular Fourier Transform. According to Gonzalez and Woods, the authors of \textit{Digital Image Processing}, the DFT is a derivation of the Fourier Transform and the Inverse DFT is a derivation of the Inverse Fourier Transform. The derivation for the DFT and IDFT are not included, but involve sampling a finite number of points from the Fourier Transforms.
+
+\begin{align*}
+\intertext{The Fourier Transform:}
+F(s)  &= \int_{-\infty}^{\infty} f(x) e^{-i2 \pi x s}dx
+\intertext{The Discrete Fourier Transform:}
+F(s) &= \frac{1}{N} \sum_{x=0}^{N-1} f(x) e^{-i2 \pi x s / N}
+\intertext{The Inverse Fourier Transform:}
+f(x)  &= \int_{-\infty}^{\infty} F(s) e^{i2 \pi x s}ds
+\intertext{The Inverse Discrete Fourier Transform}
+f(x) &= \sum_{s=0}^{N-1} F(s) e^{-i2 \pi x s / N}
+\end{align*}
+
+
 
 \subsection{How the Discrete Fourier Transform varies from the Fourier Transform}
 
@@ -302,7 +323,7 @@ This entire process is done in $O(n + nlog(n) + n + nlog(n))$ time, which can re
 \subsection{Image Processing}
 
 \mbox{}	 \\
-\indent According to Gonzalez and Woods, the authors of \textit{Digital Image Processing}, ``an image may be defined as a two-dimensional function, $f(x, y)$ where $x$ and $y$ are \textit{spatial} (plane) coordinates, and the amplitude of $f$ at any pair of coordinates $(x, y)$ is called the \textit{intensity} or \textit{gray level} of the image at that point''. In short, an image can be represented by a function that determines the color at a certain pixel. Digital image processing is one of the most widespread fields of study, having applications in virtually every STEM related profession. In addition, digital imaging processing is also not bound to visible light spectrum. We can perform image processing is the Gamma spectrum, X-ray spectrum as well as the Ultraviolet Band. Included are a few examples of imaging outside the visible light spectrum.
+\indent According to Gonzalez, ``an image may be defined as a two-dimensional function, $f(x, y)$ where $x$ and $y$ are \textit{spatial} (plane) coordinates, and the amplitude of $f$ at any pair of coordinates $(x, y)$ is called the \textit{intensity} or \textit{gray level} of the image at that point''. In short, an image can be represented by a function that determines the color at a certain pixel. Digital image processing is one of the most widespread fields of study, having applications in virtually every STEM related profession. In addition, digital imaging processing is also not bound to visible light spectrum. We can perform image processing is the Gamma spectrum, X-ray spectrum as well as the Ultraviolet Band. Included are a few examples of imaging outside the visible light spectrum.
 
 \begin{figure}[h]
 \centering
@@ -327,6 +348,7 @@ This entire process is done in $O(n + nlog(n) + n + nlog(n))$ time, which can re
 \caption{Imaging across various sources}
 \label{fig:im1}
 \end{figure}
+
 
 
 \end{document}
