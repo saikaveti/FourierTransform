@@ -132,14 +132,58 @@ The following algorithm to find the FFT of $a$ is defined recursively by Cormen 
 \end{algorithmic}
 \end{algorithm}
 
-\subsection{Improvements for the Fast Fourier Tranform}
+From this algorithm, we can arrive at the \textbf{Convolution Theorem}, which states that for any two vectors $a$ and $b$, both of which have a length $n$ that is a power of two, the following holds true:
+
+$$
+a \otimes b = DFT_{2n}^{-1}(DFT_{2n}(a) DFT_{2n}(b))
+$$
+
+\subsection{Alternatives for the Fast Fourier Tranform}
+
+\mbox{}	 \\
+\indent In \textit{Introduction to Algorithms}, Cormen, Leiserson, Rivest, and Stein present certain improvements to existing implementation of the FFT. One notable improvement is an iterative implementation of the FFT. In Computer Science, iterative and recursive solutions are often considered equivalent. This is proved in the Church-Turing Thesis. However, there certainly runtime tradeoffs that we sometimes have to make when converting from recursion to iteration and vice-versa. That being said, we make no computational trade-offs in this instance, as our iterative solution still has a runtime of $O(nlog(n))$. In this instance, just like the recursive implementation, $a$ must have a length that is a power of 2. The algorithm for an iterative approach to the FFT is as follows:
+
+\begin{algorithm}
+\caption{Iterative Implementation of FFT}\label{it-fft}
+\begin{algorithmic}[1]
+\Procedure{Bit-Reverse-Copy}{a, A} 
+
+\State $n = a.length$
+\For {\texttt{$k = 0$ to $n-1$}}
+	\State $A[rev(k)] = a_k$ \Comment{$rev(k)$ is the reverse of the bit-wise representation of k}
+\EndFor
+
+\EndProcedure
+
+\Procedure{Iterative-FFT}{a}
+
+\State \Call{Bit-Reverse-Copy}{a, A}
+\For {\texttt{$s = 1$ to $log_2(n)$}}
+	\State $m = 2^s$
+	\State $\omega_m = e^{2 \pi i / m}$
+	\For {\texttt{$k = 0$ to $n - 1$ by $m$}}
+		\State $w = 1$
+		\For {\texttt{$j = 0$ to $m/2 - 1$}}
+			\State $t = \omega A[k + j + m/2]$
+			\State $u = A[k+j]$
+			\State $A[k+j] = u + t$
+			\State $A[k+j+m/2] = u - t$
+			\State $\omega = \omega \omega_m$
+		\EndFor
+	\EndFor
+\EndFor
+
+\EndProcedure
+
+\end{algorithmic}
+\end{algorithm}
 
 \section{Applications of the Fourier Transform}
 
 \subsection{Multiplication of Polynomials}
 
 \mbox{}	 \\
-\indent According the \textit{Algorithms}, the straightforward method of adding two polynomials takes $O(n)$ time. We know the following to hold true:
+\indent According to \textit{Introduction to Algorithms}, the straightforward method of adding two polynomials takes $O(n)$ time. We know the following to hold true:
 
 \begin{align}
 f(x) &= \sum_{j = 0}^{n} a_j x^j \\
