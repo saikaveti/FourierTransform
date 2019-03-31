@@ -40,3 +40,22 @@ plt.plot(signal_fft_pow, '-o', markersize = 2)
 plt.savefig('FFTResult2.png')
 
 plt.clf()
+
+
+#Number of Sample Points
+N = 9
+#Signal Work
+signal = np.r_[0 : math.e * N : math.e / 12.0]
+signal_sin = np.cos(4 * signal) + np.sin(3 * signal)
+signal_fft = np.fft.fft(signal_sin)
+signal_fft_pow = np.abs(signal_fft)
+#Signal Plot Points
+plt.plot(signal_sin, '-o', markersize = 2)
+plt.savefig('FFTOriginal3.png')
+
+plt.clf()
+
+plt.plot(signal_fft_pow, '-o', markersize = 2)
+plt.savefig('FFTResult3.png')
+
+plt.clf()

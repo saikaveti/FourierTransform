@@ -96,12 +96,17 @@ As a result, we can see a resemblance of a non-discretized version of the Fourie
 
 \subsection{A Rudimentary Algorithm for the Discrete Fourier Transform}
 
-\subsection{The Fast Fourier Tranform}
+\subsection{Roots of Unity}
 
 \mbox{}	 \\
 \indent Before starting the Fast Fourier Transform (FFT), it is important to introduce a concept known as complex roots of unity. A complex $n^{th}$ root of unity is a complex number $\omega$ such that $\omega^n = 1$. As the name suggests, there are a total of $n$ distinct complex $n^{th}$ roots of unity. In order to find all $n$ complex roots of unity, we say $\omega_k = e^{\frac{2 \pi i k}{n}}, \forall k \in \{0, 1, 2, ... , n-1\}$. When $k = 0$, we yield the trivial solution of $\omega = 1$.
 
-	Given the Discrete Fourier Transform, it seems in our interest to find a way to compute this value. In \textit{Introduction to Algorithms}, Cormen, Leiserson, Rivest, and Stein introduce the FFT which they claim takes advantage of of the special properties of the complex roots of unity to compute $DFT_n(a)$ in $O(nlog(n))$. For the sake of this implementation, they assume at $n$ is a power of two, mostly because the existing strategies for dealing with the case where $n$ is not a power of two are quite complex. As the runtime of the algorithm suggests, the FFT is a divide and conquer algorithm. Given an $A(x)$, we can represent it as an array $a$ of coefficients. In addition, we must also define the following intermediary functions that will be called in the algorithm:
+
+\subsection{The Fast Fourier Tranform}
+
+
+\mbox{}	 \\
+\indent Given the Discrete Fourier Transform, it seems in our interest to find a way to compute this value. In \textit{Introduction to Algorithms}, Cormen, Leiserson, Rivest, and Stein introduce the FFT which they claim takes advantage of of the special properties of the complex roots of unity to compute $DFT_n(a)$ in $O(nlog(n))$. For the sake of this implementation, they assume at $n$ is a power of two, mostly because the existing strategies for dealing with the case where $n$ is not a power of two are quite complex. As the runtime of the algorithm suggests, the FFT is a divide and conquer algorithm. Given an $A(x)$, we can represent it as an array $a$ of coefficients. In addition, we must also define the following intermediary functions that will be called in the algorithm:
 	
 \begin{align*}
 A^{[0]}(x) &= a_0 + a_2x + a_4x^2 + ... + a_{n-2}x^{n/2 - 1} \\
@@ -186,7 +191,7 @@ $$
 
 \subsection{A Python Implementation of the Fast Fourier Transform}
 
-In order to better understand the results of the Fast Fourier Transform, it may be useful to write code to explore a Pythonic implementation, and  plot results in order to visualize the results of the Fast Fourier Transform. There are existing libraries in Python to aid with the visualization of the Fast Fourier Transformation. These include numpy and matplotlib. Numpy is useful for existing libraries that make it possible to manipulate an entire array with a single operation as well as contains the function to perform the Fast Fourier Transformation. Matplotlib is the library that contains the function to fully plot a dataset. Given a signal, the following method plots both the signal in real space as well as in frequency space:
+In order to better understand the results of the Fast Fourier Transform, it may be useful to write code to explore a Pythonic implementation, and  plot the signals in order to visualize the results of the Fast Fourier Transform. There are existing libraries in Python to aid with the visualization of the Fast Fourier Transformation. These include numpy and matplotlib. Numpy is useful for existing libraries that make it possible to manipulate an entire array with a single operation as well as contains the function to perform the Fast Fourier Transformation. Matplotlib is the library that contains the function to fully plot a dataset. Given a signal, the following method plots both the signal in real space as well as in frequency space:
 
 \begin{Verbatim}[tabsize=4]
 def plot_signal(signal):
@@ -237,6 +242,24 @@ With that information, we are able to quickly find the FFT of different waves in
 \caption{Wave 2 and its Fast Fourier Transform}
 \label{fig:text2}
 \end{figure}
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}{.4\textwidth}
+	\centering
+	\includegraphics[scale=.3]{FFTOriginal3.png}
+	\caption{Real Space}
+	\label{fig:sub3}
+\end{subfigure} %
+\begin{subfigure}{.4\textwidth}
+	\centering
+	\includegraphics[scale=.3]{FFTResult3.png}
+	\caption{Frequency Space}
+	\label{fig:sub4}
+\end{subfigure}
+\caption{Wave 3 and its Fast Fourier Transform}
+\label{fig:text3}
+\end{figure}
 \section{Applications of the Fourier Transform}
 
 \subsection{Multiplication of Polynomials}
@@ -277,5 +300,33 @@ The point-value representation of a polynomial $A(x)$ is a set of pairs in the f
 This entire process is done in $O(n + nlog(n) + n + nlog(n))$ time, which can reduce to $O(nlog(n))$ time by the definition of big-$O$ notation. Thus, using the above algorithm, one can multiply any two polynomials in $O(nlog(n))$ time.
 
 \subsection{Image Processing}
+
+\mbox{}	 \\
+\indent According to Gonzalez and Woods, the authors of \textit{Digital Image Processing}, ``an image may be defined as a two-dimensional function, $f(x, y)$ where $x$ and $y$ are \textit{spatial} (plane) coordinates, and the amplitude of $f$ at any pair of coordinates $(x, y)$ is called the \textit{intensity} or \textit{gray level} of the image at that point''. In short, an image can be represented by a function that determines the color at a certain pixel. Digital image processing is one of the most widespread fields of study, having applications in virtually every STEM related profession. In addition, digital imaging processing is also not bound to visible light spectrum. We can perform image processing is the Gamma spectrum, X-ray spectrum as well as the Ultraviolet Band. Included are a few examples of imaging outside the visible light spectrum.
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}{.3\textwidth}
+	\centering
+	\includegraphics[scale=.25]{gamma.png}
+	\caption{Gamma-Ray Imaging}
+	\label{fig:sub3}
+\end{subfigure} %
+\begin{subfigure}{.3\textwidth}
+	\centering
+	\includegraphics[scale=.25]{xray.png}
+	\caption{X-Ray Imaging}
+	\label{fig:sub4}
+\end{subfigure} %
+\begin{subfigure}{.3\textwidth}
+	\centering
+	\includegraphics[scale=.25]{uv.png}
+	\caption{Ultraviolet Imaging}
+	\label{fig:sub4}
+\end{subfigure}
+\caption{Imaging across various sources}
+\label{fig:im1}
+\end{figure}
+
 
 \end{document}

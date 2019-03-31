@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  31 MAR 2019 02:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  31 MAR 2019 16:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -326,7 +326,38 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@every@algorithm=\toks28
 \c@algorithm=\count124
 )
-(./FourierTransforms.aux)
+(./FourierTransforms.aux
+
+LaTeX Warning: Label `fig:sub3' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub3' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub4' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub4' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub3' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub3' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub4' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub4' multiply defined.
+
+
+LaTeX Warning: Label `fig:sub4' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sub4' multiply defined.
+
+)
 \openout1 = `FourierTransforms.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
@@ -344,8 +375,7 @@ LaTeX Font Info:    ... okay on input line 31.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
 LaTeX Font Info:    ... okay on input line 31.
 LaTeX Font Info:    Try loading font information for U+msa on input line 31.
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 31.
@@ -409,49 +439,74 @@ e
 [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 [2]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 116.
+put line 121.
  [3] [4]
-<FFTOriginal1.png, id=63, 462.528pt x 346.896pt>
+<FFTOriginal1.png, id=64, 462.528pt x 346.896pt>
 File: FFTOriginal1.png Graphic file (type png)
 <use FFTOriginal1.png>
-Package pdftex.def Info: FFTOriginal1.png  used on input line 208.
+Package pdftex.def Info: FFTOriginal1.png  used on input line 213.
 (pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
-<FFTResult1.png, id=65, 462.528pt x 346.896pt>
+<FFTResult1.png, id=66, 462.528pt x 346.896pt>
 File: FFTResult1.png Graphic file (type png)
 <use FFTResult1.png>
-Package pdftex.def Info: FFTResult1.png  used on input line 214.
+Package pdftex.def Info: FFTResult1.png  used on input line 219.
 (pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
-<FFTOriginal2.png, id=66, 462.528pt x 346.896pt>
+<FFTOriginal2.png, id=67, 462.528pt x 346.896pt>
 File: FFTOriginal2.png Graphic file (type png)
 <use FFTOriginal2.png>
-Package pdftex.def Info: FFTOriginal2.png  used on input line 227.
+Package pdftex.def Info: FFTOriginal2.png  used on input line 232.
 (pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
-<FFTResult2.png, id=67, 462.528pt x 346.896pt>
+<FFTResult2.png, id=68, 462.528pt x 346.896pt>
 File: FFTResult2.png Graphic file (type png)
 <use FFTResult2.png>
-Package pdftex.def Info: FFTResult2.png  used on input line 233.
+Package pdftex.def Info: FFTResult2.png  used on input line 238.
 (pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
-
-Underfull \vbox (badness 1769) has occurred while \output is active []
-
+<FFTOriginal3.png, id=69, 462.528pt x 346.896pt>
+File: FFTOriginal3.png Graphic file (type png)
+<use FFTOriginal3.png>
+Package pdftex.def Info: FFTOriginal3.png  used on input line 250.
+(pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
+<FFTResult3.png, id=70, 462.528pt x 346.896pt>
+File: FFTResult3.png Graphic file (type png)
+<use FFTResult3.png>
+Package pdftex.def Info: FFTResult3.png  used on input line 256.
+(pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
  [5 <./FFTOriginal1.png> <./FFTResult1.png> <./FFTOriginal2.png> <./FFTResult2.
-png>]
-[6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 281.
- [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 281.
+png> <./FFTOriginal3.png> <./FFTResult3.png>] [6]
+<gamma.png, id=95, 257.96375pt x 220.825pt>
+File: gamma.png Graphic file (type png)
+<use gamma.png>
+Package pdftex.def Info: gamma.png  used on input line 311.
+(pdftex.def)             Requested size: 64.49077pt x 55.2061pt.
+<xray.png, id=96, 253.94875pt x 207.77625pt>
+File: xray.png Graphic file (type png)
+<use xray.png>
+Package pdftex.def Info: xray.png  used on input line 317.
+(pdftex.def)             Requested size: 63.48703pt x 51.94392pt.
+<uv.png, id=97, 253.94875pt x 250.9375pt>
+File: uv.png Graphic file (type png)
+<use uv.png>
+Package pdftex.def Info: uv.png  used on input line 323.
+(pdftex.def)             Requested size: 63.48703pt x 62.7342pt.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 332.
+ [7 <./gamma.png> <./xray.png> <./uv.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 332.
  (./FourierTransforms.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 281.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 281.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 332.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 332.
 Package rerunfilecheck Info: File `FourierTransforms.out' has not changed.
 (rerunfilecheck)             Checksum: 1BC1F8080A3F4AD36C1F54681679B946;289.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 281.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 332.
  ) 
 Here is how much of TeX's memory you used:
- 8475 strings out of 492649
- 125178 string characters out of 6129622
- 217554 words of memory out of 5000000
- 12072 multiletter control sequences out of 15000+600000
+ 8504 strings out of 492649
+ 125599 string characters out of 6129622
+ 217751 words of memory out of 5000000
+ 12094 multiletter control sequences out of 15000+600000
  11669 words of font info for 45 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  36i,12n,39p,1081b,500s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -471,10 +526,10 @@ ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/
 018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/201
 8/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2018
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on FourierTransforms.pdf (7 pages, 370883 bytes).
+Output written on FourierTransforms.pdf (7 pages, 1024051 bytes).
 PDF statistics:
- 160 PDF objects out of 1000 (max. 8388607)
- 125 compressed objects within 2 object streams
- 36 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 176 PDF objects out of 1000 (max. 8388607)
+ 131 compressed objects within 2 object streams
+ 39 named destinations out of 1000 (max. 500000)
+ 78 words of extra memory for PDF output out of 10000 (max. 10000000)
 
