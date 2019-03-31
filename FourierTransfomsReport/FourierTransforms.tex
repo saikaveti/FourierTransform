@@ -6,8 +6,14 @@
 \usepackage{amssymb}
 \usepackage{hyperref}
 \usepackage{url}
+\usepackage{tabto}
+\usepackage{fancyvrb}
 
-\usepackage{minted}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{graphicx}
+
 
 \usepackage[noend]{algpseudocode}
 \usepackage{algorithm}
@@ -182,7 +188,57 @@ $$
 
 \subsection{A Python Implementation of the Fast Fourier Transform}
 
-In order to better understand the results of the Fast Fourier Transform, it may be useful to write code to explore a Pythonic implementation, and  plot results in order to visualize the results of the Fast Fourier Transform. There are existing libraries in Python to aid with the visualization of the Fast Fourier Transformation. These include numpy and matplotlib. Numpy is useful for existing libraries that make it possible to manipulate an entire array with a single operation as well as contains the function to perform the Fast Fourier Transformation. Matplotlib is the library that contains the function to fully plot a dataset. Pygments was used to include the Python code below. Given a signal, the following method plots both the signal in real space as well as in frequency space:
+In order to better understand the results of the Fast Fourier Transform, it may be useful to write code to explore a Pythonic implementation, and  plot results in order to visualize the results of the Fast Fourier Transform. There are existing libraries in Python to aid with the visualization of the Fast Fourier Transformation. These include numpy and matplotlib. Numpy is useful for existing libraries that make it possible to manipulate an entire array with a single operation as well as contains the function to perform the Fast Fourier Transformation. Matplotlib is the library that contains the function to fully plot a dataset. Given a signal, the following method plots both the signal in real space as well as in frequency space:
+
+\begin{Verbatim}[tabsize=4]
+def plot_signal(signal):
+	signal_fft = np.fft.fft(signal)
+	signal_fft_pow = np.abs(signal_fft)
+	plt.plot(signal, '-o', markersize = 2)
+	plt.savefig('RealSpace.png')
+	plt.clf()
+	plt.plot(signal_fft_pow, '-o', markersize = 2)
+	plt.savefig('FrequencySpace.png')
+\end{Verbatim}
+
+With that information, we are able to quickly find the FFT of different waves in real space in frequency space. Here are a few examples generated as a result of the python code included above. 
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}{.4\textwidth}
+	\centering
+	\includegraphics[scale=.3]{FFTOriginal1.png}
+	\caption{Real Space}
+	\label{fig:sub1}
+\end{subfigure} %
+\begin{subfigure}{.4\textwidth}
+	\centering
+	\includegraphics[scale=.3]{FFTResult1.png}
+	\caption{Frequency Space}
+	\label{fig:sub2}
+\end{subfigure}
+\caption{Wave 1 and its Fast Fourier Transform}
+\label{fig:text1}
+\end{figure}
+
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}{.4\textwidth}
+	\centering
+	\includegraphics[scale=.3]{FFTOriginal2.png}
+	\caption{Real Space}
+	\label{fig:sub3}
+\end{subfigure} %
+\begin{subfigure}{.4\textwidth}
+	\centering
+	\includegraphics[scale=.3]{FFTResult2.png}
+	\caption{Frequency Space}
+	\label{fig:sub4}
+\end{subfigure}
+\caption{Wave 2 and its Fast Fourier Transform}
+\label{fig:text2}
+\end{figure}
 \section{Applications of the Fourier Transform}
 
 \subsection{Multiplication of Polynomials}
