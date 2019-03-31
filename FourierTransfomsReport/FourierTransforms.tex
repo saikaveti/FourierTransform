@@ -84,10 +84,11 @@ As a result, we can see a resemblance of a non-discretized version of the Fourie
 
 \subsection{The Fast Fourier Tranform}
 
+	Given the Discrete Fourier Transform, it seems in our interest to find a way to compute this value. In \textit{Introduction to Algorithms}, Cormen, Leiserson, Rivest, and Stein introduce 
 
 \section{Applications of the Fourier Transform}
 
-\subsection{Convolution of Polynomials}
+\subsection{Multiplication of Polynomials}
 
 \mbox{}	 \\
 \indent According the \textit{Algorithms}, the straightforward method of adding two polynomials takes $O(n)$ time. We know the following to hold true:
@@ -103,16 +104,26 @@ For two polynomials $f(x)$ and $g(x)$, with length $k$ and $n$, we know that $f(
 With this in mind, we can derive the straightforward algorithm for the multiplication of two polynomials. For the multiplication of the two polynomials, Cormen claims that the following holds true:
 
 \begin{align}
-f(x) &= \sum_{j = 0}^{n} a_j x^j \\
-g(x) &= \sum_{j = 0}^{n} b_j x^j \\ 
 f(x)g(x) &= \sum_{j = 0}^{2n} c_j  x^j \\
 \intertext{where}
 c_j &=  \sum_{k = 0}^{j} a_k b_{j-k}
 \end{align}
 
-From this information, we can see that equation $(6)$ yields us with the sum of $2n$ polynomials, each of which was computed in $O(n)$ time. As we showed earlier, the sum of any two polynomials can be computed in $O(n)$ time, and since we must add $2n$ total polynomials, we get that the product of any two polynomials can be computed in $O(2n^2)$ time, which can be reduced to $O(n^2)$ time by the definition of big-$O$ notation.
+From this information, we can see that equation $(4)$ yields us with the sum of $2n$ polynomials, each of which was computed in $O(n)$ time. As we showed earlier, the sum of any two polynomials can be computed in $O(n)$ time, and since we must add $2n$ total polynomials, we get that the product of any two polynomials can be computed in $O(2n^2)$ time, which can be reduced to $O(n^2)$ time by the definition of big-$O$ notation.
 
-With our understanding of the FFT, Cormen claims that we can find the product of any two polynomials in $O(nlog(n))$ time, a significant asymptotic improvement over $O(n^2)$. This holds true 
+With our understanding of the FFT, Cormen claims that we can find the product of any two polynomials in $O(nlog(n))$ time, a significant asymptotic improvement over $O(n^2)$.  Before starting the explanation of the algorithm, it is important to introduce another way to represent a polynomial, known as the point-value representation. 
+
+The point-value representation of a polynomial $A(x)$ is a set of pairs in the form ${\{(x_0, y_0), (x_1, y_1), ..... , (x_n, y_n)\}}$ such that $y_i = A(x_i)$.  These values can be generated in $O(n^2)$  time using Horner's Metho, but can be reduced to $O(nlog(n))$ time if the values of $x$ are cleverly picked. From this definition, one can conclude that each polynomial has a many different point-value representations. Using this new representation of polynomials, we can indeed determine the product of any two polynomials in $O(n)$ time. Given this information, we can now explore the algorithm to find the product of any two polynomials in $O(nlog(n))$ time. Cormen argues that the following four steps will determine the product of any two polynomials $A(x)$ and $B(x)$ of length n:
+
+\begin{enumerate}
+	\item \textit{Double degree-bound: } Create the coefficient representations of $A(x)$ and $B(x)$ of length $2n$ by padding $n$ higher-order coefficients to the left of the array representations of $A(x)$ and $B(x)$. This can be done in $O(n)$ time.
+	\item \textit{Evaluate: } Compute the point-value representations of $A(x)$ and $B(x)$ of length $2n$ by applying the FFT of order $2n$ on each polynomial. As a result, we can get the representations at the $(2n)^{th}$ roots of unity. This is done in $O(nlog(n))$ time.
+	\item \textit{Pointwise Multiply: } Multiply these two point-value representations pairwise, yielding us with the value of $C(x) = A(x)B(x)$ at all roots of unity. As explained earlier, this is done in $O(n)$ time.
+	\item \textit{Iterpolate: } We can then create the coefficient representation of polynomial representation of $C(x)$ by applying the FFT on the point-value representation of $C(x)$. This is done in $O(nlog(n))$ time.
+
+\end{enumerate}
+
+This entire process is done in $O(n + nlog(n) + n + nlog(n))$ time, which can reduce to $O(nlog(n))$ time by the definition of big-$O$ notation. Thus, using the above algorithm, one can multiply any two polynomials in $O(nlog(n))$ time.
 
 \subsection{Image Processing}
 
