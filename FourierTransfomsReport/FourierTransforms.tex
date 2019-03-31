@@ -331,24 +331,58 @@ This entire process is done in $O(n + nlog(n) + n + nlog(n))$ time, which can re
 	\centering
 	\includegraphics[scale=.25]{gamma.png}
 	\caption{Gamma-Ray Imaging}
-	\label{fig:sub3}
+	\label{fig:sub5}
 \end{subfigure} %
 \begin{subfigure}{.3\textwidth}
 	\centering
 	\includegraphics[scale=.25]{xray.png}
 	\caption{X-Ray Imaging}
-	\label{fig:sub4}
+	\label{fig:sub6}
 \end{subfigure} %
 \begin{subfigure}{.3\textwidth}
 	\centering
 	\includegraphics[scale=.25]{uv.png}
 	\caption{Ultraviolet Imaging}
-	\label{fig:sub4}
+	\label{fig:sub7}
 \end{subfigure}
 \caption{Imaging across various sources}
 \label{fig:im1}
 \end{figure}
 
+In every variation of the Fourier Transform above, we were working in one dimension. If we were to follow a similar derivation described above, we can indeed arrive as a two-dimensional DFT and a two-dimensional IDFT. 
+\begin{align*}
+\intertext{Two-Dimensional Discrete Fourier Transform}
+F(u, v) &= \sum_{x=0}^{M-1}\sum_{y=0}^{N-1} f(x, y) e^{-i2\pi (ux/M + vy/N)}
+\intertext{Two-Dimensional Inverse Discrete Fourier Transform}
+f(x, y) &= \frac{1}{MN}\sum_{x=0}^{M-1}\sum_{y=0}^{N-1} F(u, v) e^{i2\pi (ux/M + vy/N)}
+\end{align*}
+In this case, $f(x, y)$ is a digital image of size $M \times N$, and just like in the 1-D case, must be evaluated for the discrete values $u$ and $v$ in the ranges $u = 0, 1, 2, ..., M-1$ and $v = 0, 1, 2, ... , N-1$
 
+The two-dimensional DFT is an essential part of modern image processing and is essential in various aliasing and filtering techniques. For example, look at the application of the Discrete Fourier Transform on the following image:
+
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}{.3\textwidth}
+	\centering
+	\includegraphics[scale=.32]{dftimage1.png}
+	\caption{A Damaged Circuit}
+	\label{fig:sub8}
+\end{subfigure} %
+\begin{subfigure}{.3\textwidth}
+	\centering
+	\includegraphics[scale=.32]{dftimage2.png}
+	\caption{DFT on the Circuit}
+	\label{fig:sub9}
+\end{subfigure} %
+\begin{subfigure}{.3\textwidth}
+	\centering
+	\includegraphics[scale=.25]{dftimage3.png}
+	\caption{Modified IDFT (Dark)}
+	\label{fig:sub10}
+\end{subfigure}
+\caption{Results of DFT and IDFT}
+\label{fig:im2}
+\end{figure}
 
 \end{document}
