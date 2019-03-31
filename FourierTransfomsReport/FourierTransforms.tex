@@ -7,6 +7,14 @@
 \usepackage{hyperref}
 \usepackage{url}
 
+\usepackage[noend]{algpseudocode}
+\usepackage{algorithm}
+
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\makeatother
+
+
 
 \title{The Fourier Transform: Variations and Applications}
 
@@ -84,7 +92,47 @@ As a result, we can see a resemblance of a non-discretized version of the Fourie
 
 \subsection{The Fast Fourier Tranform}
 
-	Given the Discrete Fourier Transform, it seems in our interest to find a way to compute this value. In \textit{Introduction to Algorithms}, Cormen, Leiserson, Rivest, and Stein introduce 
+\mbox{}	 \\
+\indent Before starting the Fast Fourier Transform (FFT), it is important to introduce a concept known as complex roots of unity. A complex $n^{th}$ root of unity is a complex number $\omega$ such that $\omega^n = 1$. As the name suggests, there are a total of $n$ distinct complex $n^{th}$ roots of unity. In order to find all $n$ complex roots of unity, we say $\omega_k = e^{\frac{2 \pi i k}{n}}, \forall k \in \{0, 1, 2, ... , n-1\}$. When $k = 0$, we yield the trivial solution of $\omega = 1$.
+
+	Given the Discrete Fourier Transform, it seems in our interest to find a way to compute this value. In \textit{Introduction to Algorithms}, Cormen, Leiserson, Rivest, and Stein introduce the FFT which they claim takes advantage of of the special properties of the complex roots of unity to compute $DFT_n(a)$ in $O(nlog(n))$. For the sake of this implementation, they assume at $n$ is a power of two, mostly because the existing strategies for dealing with the case where $n$ is not a power of two are quite complex. As the runtime of the algorithm suggests, the FFT is a divide and conquer algorithm. Given an $A(x)$, we can represent it as an array $a$ of coefficients. In addition, we must also define the following intermediary functions that will be called in the algorithm:
+	
+\begin{align*}
+A^{[0]}(x) &= a_0 + a_2x + a_4x^2 + ... + a_{n-2}x^{n/2 - 1} \\
+A^{[1]}(x) &= a_1 + a_3x + a_5x^2 + ... + a_{n-1}x^{n/2 - 1} \\
+\intertext{such that}
+A(x) &= A^{[0]}(x^2) + xA^{[1]}(x^2)
+\end{align*}
+
+The following algorithm to find the FFT of $a$ is defined recursively by Cormen and is as follows:
+
+\begin{algorithm}
+\caption{Recursive Implementation of FFT}\label{fft}
+\begin{algorithmic}[1]
+\Procedure{Recursive-FFT}{a} \Comment{A Recursive Implementation of FFT}
+\State $n = a.length$
+\If {$n == 1$} \Return{ a} \Comment{Base Case of Recursion}
+\EndIf
+\State $\omega_n = e^{2\pi i / n}$ 
+\State $\omega = 1$
+\State $a^{[0]} = (a_0, a_2, a_4, ..., a_{n-2})$ \Comment{Define Coefficients}
+\State $a^{[1]} = (a_1, a_3, a_5, ..., a_{n-1})$
+\State $y^{[0]} = \Call{Recursive-FFT}{a^{[0]}}$ \Comment{Recursive Step}
+\State $y^{[1]} = \Call{Recursive-FFT}{a^{[1]}}$
+
+\For{ \texttt{$k = 0$ to $n/2 - 1$}}
+	\State $y_k = y_k^{[0]} + \omega y_k^{[1]}$ \Comment{These hold true by definition of $y_k$}
+	\State $y_{k+(n/2)} = y_k^{[0]} - \omega y_k^{[1]}$
+	\State $\omega = \omega \omega_n$ \Comment{Making sure that $\omega$ is updated properly}
+\EndFor
+
+\State \Return{y} \Comment{Assumed that $y$ is a column vector}
+
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Improvements for the Fast Fourier Tranform}
 
 \section{Applications of the Fourier Transform}
 
@@ -119,7 +167,7 @@ The point-value representation of a polynomial $A(x)$ is a set of pairs in the f
 	\item \textit{Double degree-bound: } Create the coefficient representations of $A(x)$ and $B(x)$ of length $2n$ by padding $n$ higher-order coefficients to the left of the array representations of $A(x)$ and $B(x)$. This can be done in $O(n)$ time.
 	\item \textit{Evaluate: } Compute the point-value representations of $A(x)$ and $B(x)$ of length $2n$ by applying the FFT of order $2n$ on each polynomial. As a result, we can get the representations at the $(2n)^{th}$ roots of unity. This is done in $O(nlog(n))$ time.
 	\item \textit{Pointwise Multiply: } Multiply these two point-value representations pairwise, yielding us with the value of $C(x) = A(x)B(x)$ at all roots of unity. As explained earlier, this is done in $O(n)$ time.
-	\item \textit{Iterpolate: } We can then create the coefficient representation of polynomial representation of $C(x)$ by applying the FFT on the point-value representation of $C(x)$. This is done in $O(nlog(n))$ time.
+	\item \textit{Iterpolate: } We can then create the coefficient representation of polynomial  $C(x)$ by applying the FFT on the point-value representation of $C(x)$. This is done in $O(nlog(n))$ time.
 
 \end{enumerate}
 
