@@ -516,18 +516,22 @@ With this method, we are able to generate the two-dimensional DFT for any black 
 
 \subsection{Audio Compression}
 
-\section{A Comparison between Principal Component Analysis and FFT}
+\section{An Analysis of Principal Component Analysis and FFT}
+
+\subsection{A Brief Introduction to Principal Component Analysis}
 
 \mbox{}	 \\
-\indent The Fast Fourier Transform (FFT) can be best described as an algorithm that computes the Discrete Fourier Transform (DFT), which is responsible from converting a signal from its original domain to its representation in the frequency domain. Principal Component Analysis (PCA) is a machine learning algorithm that is a method of dimensionality reduction. Given a set of tuples or vectors that has $n$ attributes, PCA determines $k$ $n$-dimensional orthogonal vectors that can nearly equivalently represent the data. This is a very important algorithm to reduce the number of attributes in a dataset while still retaining the statistical differences between tuples. Han, Kember, and Pei, the authors of \textit{Data Mining: Concepts and Techniques}, describe the algorithm for PCA as the following:
+\indent Principal Component Analysis (PCA) is a machine learning algorithm that is a method of dimensionality reduction. Given a set of tuples or vectors that has $n$ attributes, PCA determines $k$ $n$-dimensional orthogonal vectors that can nearly equivalently represent the data. This is a very important algorithm to reduce the number of attributes in a dataset while still retaining the statistical differences between tuples. Han, Kember, and Pei, the authors of \textit{Data Mining: Concepts and Techniques}, describe the algorithm for PCA as the following:
 
 \begin{enumerate}
 	\item The input data are normalized, so that each attribute falls within the same range. The normalization scale that is chosen is mostly a design decision, but the most common is $z$-score normalization. This step helps ensure that the attributes with large domains will not dominate attributes with smaller domains.
-	\item PCA then computes $k$ orthonormal vectors that provide a basis for the normalized input data. These are unit vectors that each point in a direction perpendicular to the others. These are unit vectors that each point in a direction perpendicular. This means that the dot-product of any two vectors must be $0$. These vectors are commonly refered to as the \textit{principal components}
-	\item $|z| = \sqrt{a^2 + b^2}$
-	\item $\overline{(z_1 z_2)} = \bar{z_1}\bar{z_2}$
+	\item PCA then computes $k$ orthonormal vectors that provide a basis for the normalized input data. These are unit vectors that each point in a direction perpendicular to the others. These are unit vectors that each point in a direction perpendicular. This means that the dot-product of any two vectors must be $0$. These vectors are commonly refered to as the \textit{principal components}. The input data are a linear combination of the principal components.
+	\item The principal components are then sorted in order of decreasing "significance" or strength. The principal components essentially serve as a new set of axes for the data, providing important information about variance. That is, the sorted axes are such that the first axis shows the most variance among the data, the second axis shows the next highest variance, and so on.
+	\item As a result, the data size can be reduced by eliminating the weaker components, while still maintaining a very good approximation of the original data.
 
 \end{enumerate}
+
+\subsection{A Comparison between PCA and FFT}
 
 \newpage
 \section{Bibliography}
