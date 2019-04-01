@@ -42,7 +42,7 @@
 \subsection{Basic Properties of Complex Numbers}
 
 \mbox{}	 \\
-\indent Saff and Snider, in \textit{Fundamentals of Complex Analysis with Applications to Engineering and Science} introduce a \textbf{complex number} as an expression in the form $a + bi$, where $a$ and $b$ must be real numbers. Two complex numbers $a +bi$ and $c + di$ can only be equal if and only if $a = c$ and $b = d$. For future reference, complex numbers will be referred to as $z$ where $z = a+bi$. A complex number $a+bi$ exists on the complex plane as a rectangular coordinate $(a, b)$. The following properties of complex numbers will be used over the course of this paper:
+\indent Saff and Snider, in \textit{Fundamentals of Complex Analysis with Applications to Engineering and Science} introduce a \textbf{complex number} as an expression in the form $a + bi$, where $a$ and $b$ must be real numbers and $i = \sqrt{-1}$. Two complex numbers $a +bi$ and $c + di$ can only be equal if and only if $a = c$ and $b = d$. For future reference, complex numbers will be referred to as $z$ where $z = a+bi$. A complex number $a+bi$ exists on the complex plane as a rectangular coordinate $(a, b)$. The following properties of complex numbers will be used over the course of this paper:
 
 \begin{enumerate}
 	\item $z = a+bi$
@@ -55,7 +55,21 @@
 	\item $|z_1 + z_2| \leq |z_1| + |z_2|$
 \end{enumerate}
 
-A complex number
+A complex number with rectangular coordinates $(x, y)$ can be written in terms of the polar coordinates $(r, \theta)$ such that
+
+$$
+x = rcos(\theta) \qquad y = rsin(\theta)
+$$
+Conversely, a polar coordinate can be written in terms of rectangular coordinates such that 
+$$
+r = \sqrt{x^2 + y^2} = |z| \qquad 
+tan(\theta) = y/x
+$$
+It is important to note that 
+$$
+\theta = tan^{-1}\Big(\frac{y}{x}\Big)
+$$
+does not necessarily hold true because $\theta$ can exist in different quadrants while $tan(\theta)$ still has the same value.
 
 \subsection{Roots of Unity}
 
@@ -63,6 +77,40 @@ A complex number
 \indent Before starting the Fast Fourier Transform (FFT), it is important to introduce a concept known as complex roots of unity. A complex $n^{th}$ root of unity is a complex number $\omega$ such that $\omega^n = 1$. As the name suggests, there are a total of $n$ distinct complex $n^{th}$ roots of unity. In order to find all $n$ complex roots of unity, we say $\omega_k = e^{\frac{2 \pi i k}{n}}, \forall k \in \{0, 1, 2, ... , n-1\}$. When $k = 0$, we yield the trivial solution of $\omega = 1$.
 
 \subsection{Euler's Formula}
+
+\mbox{}	 \\
+\indent In this subsection, we explore the relationship between the mathematical constant $e$ and the trigonometric functions $cosine$ and $sine$ as well as the imaginary constant $i$. Let $z = x + iy$.
+
+\begin{align*}
+z &= x + iy \\
+e^{z} &= e^{x+iy} \\
+&= e^x e^{iy}
+\intertext{We can then differentiate the second term on the right hand side to determine that}
+\frac{de^{iy}}{d(iy)} &= e^{iy} \\
+\frac{de^{iy}}{dy} &= ie^{iy}
+\intertext{Differentiating again, we get: }
+\frac{d^2e^{iy}}{dy^2} &= \frac{d}{dy}(ie^{iy}) \\
+&= i^2 e^{iy} \\
+&= -e^{iy}
+\intertext{We are left with the following differential equation, that if}
+g(y) &= e^{iy}
+\intertext{then, }
+\frac{d^2g}{dy^2} &= -g
+\intertext{and that any function in the form of }
+g(y) &= Acos(y) + B sin(y)
+\intertext{satisfies the differential equation. To evaluage A and B, we can use the following equations: }
+g(0) &= e^{i0} = 1 = A cos(0) + B sin(0) \\
+\frac{dg}{dy}(0) &= ie^{i0} = i = -Asin(0) +Bcos(0)
+\intertext{Thus, }
+& \quad \quad A = 1 \quad \quad B = i
+\intertext{and}
+e^{iy} &= cos(y) + i sin(y)
+\end{align*}
+Thus, \textbf{Euler's Formula} is as follows:
+$$
+e^{i\theta} = cos(\theta) + i sin(\theta)
+$$
+
 
 \section{The Fourier Transform}
 
@@ -145,7 +193,6 @@ $$
 $$
 
 Sundararajan explains the proof as the following:
-
 \begin{align*}
 \intertext{Since the square of the magnitude of a complex number can be written in terms of its and its conjugate, the following holds true:}
 \sum_{n=0}^{N-1} |x(n)|^2 &= \sum_{n=0}^{N-1} x(n) x^{*}(n)
@@ -158,13 +205,7 @@ Sundararajan explains the proof as the following:
 \intertext{When this does not hold true, the equation reduced to zero because of the orthogonal property}
 \end{align*}
 
-\subsection{How the Discrete Fourier Transform varies from the Fourier Transform}
-
-
-
 \section{The Computation of the Discrete Fourier Transform}
-
-\subsection{A Rudimentary Algorithm for the Discrete Fourier Transform}
 
 \subsection{The Fast Fourier Tranform}
 
@@ -472,5 +513,13 @@ With this method, we are able to generate the two-dimensional DFT for any black 
 \caption{The Two-Dimensional DFT of an Image}
 \label{fig:im3}
 \end{figure}
+
+\subsection{Audio Compression}
+
+\section{A Comparison between the FFT and Principal Component Analysis}
+
+
+\newpage
+\section{Bibliography}
 
 \end{document}

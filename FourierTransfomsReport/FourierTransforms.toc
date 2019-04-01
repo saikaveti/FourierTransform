@@ -2,18 +2,19 @@
 \contentsline {subsection}{\tocsubsection {}{1.1}{Basic Properties of Complex Numbers}}{2}{subsection.1.1}
 \contentsline {subsection}{\tocsubsection {}{1.2}{Roots of Unity}}{2}{subsection.1.2}
 \contentsline {subsection}{\tocsubsection {}{1.3}{Euler's Formula}}{2}{subsection.1.3}
-\contentsline {section}{\tocsection {}{2}{The Fourier Transform}}{2}{section.2}
-\contentsline {subsection}{\tocsubsection {}{2.1}{Developing an Intuition for the Fourier Transform}}{2}{subsection.2.1}
-\contentsline {subsection}{\tocsubsection {}{2.2}{The Fourier Series}}{2}{subsection.2.2}
-\contentsline {subsection}{\tocsubsection {}{2.3}{The Computation of the Fourier Transform}}{3}{subsection.2.3}
-\contentsline {section}{\tocsection {}{3}{The Discrete Fourier Transform}}{4}{section.3}
-\contentsline {subsection}{\tocsubsection {}{3.1}{The Basics of the Discrete Fourier Transform}}{4}{subsection.3.1}
-\contentsline {subsection}{\tocsubsection {}{3.2}{How the Discrete Fourier Transform varies from the Fourier Transform}}{5}{subsection.3.2}
-\contentsline {section}{\tocsection {}{4}{The Computation of the Discrete Fourier Transform}}{5}{section.4}
-\contentsline {subsection}{\tocsubsection {}{4.1}{A Rudimentary Algorithm for the Discrete Fourier Transform}}{5}{subsection.4.1}
-\contentsline {subsection}{\tocsubsection {}{4.2}{The Fast Fourier Tranform}}{6}{subsection.4.2}
-\contentsline {subsection}{\tocsubsection {}{4.3}{Alternatives for the Fast Fourier Tranform}}{6}{subsection.4.3}
-\contentsline {subsection}{\tocsubsection {}{4.4}{A Python Implementation of the Fast Fourier Transform}}{7}{subsection.4.4}
-\contentsline {section}{\tocsection {}{5}{Applications of the Fourier Transform}}{9}{section.5}
-\contentsline {subsection}{\tocsubsection {}{5.1}{Multiplication of Polynomials}}{9}{subsection.5.1}
-\contentsline {subsection}{\tocsubsection {}{5.2}{Image Processing}}{10}{subsection.5.2}
+\contentsline {section}{\tocsection {}{2}{The Fourier Transform}}{3}{section.2}
+\contentsline {subsection}{\tocsubsection {}{2.1}{Developing an Intuition for the Fourier Transform}}{3}{subsection.2.1}
+\contentsline {subsection}{\tocsubsection {}{2.2}{The Fourier Series}}{4}{subsection.2.2}
+\contentsline {subsection}{\tocsubsection {}{2.3}{The Computation of the Fourier Transform}}{4}{subsection.2.3}
+\contentsline {section}{\tocsection {}{3}{The Discrete Fourier Transform}}{5}{section.3}
+\contentsline {subsection}{\tocsubsection {}{3.1}{The Basics of the Discrete Fourier Transform}}{5}{subsection.3.1}
+\contentsline {section}{\tocsection {}{4}{The Computation of the Discrete Fourier Transform}}{7}{section.4}
+\contentsline {subsection}{\tocsubsection {}{4.1}{The Fast Fourier Tranform}}{7}{subsection.4.1}
+\contentsline {subsection}{\tocsubsection {}{4.2}{Alternatives for the Fast Fourier Tranform}}{8}{subsection.4.2}
+\contentsline {subsection}{\tocsubsection {}{4.3}{A Python Implementation of the Fast Fourier Transform}}{8}{subsection.4.3}
+\contentsline {section}{\tocsection {}{5}{Applications of the Fourier Transform}}{10}{section.5}
+\contentsline {subsection}{\tocsubsection {}{5.1}{Multiplication of Polynomials}}{10}{subsection.5.1}
+\contentsline {subsection}{\tocsubsection {}{5.2}{Image Processing}}{11}{subsection.5.2}
+\contentsline {subsection}{\tocsubsection {}{5.3}{Audio Compression}}{13}{subsection.5.3}
+\contentsline {section}{\tocsection {}{6}{A Comparison between the FFT and Principal Component Analysis}}{13}{section.6}
+\contentsline {section}{\tocsection {}{7}{Bibliography}}{14}{section.7}
