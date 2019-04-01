@@ -23,7 +23,7 @@
 \def\BState{\State\hskip-\ALG@thistlm}
 \makeatother
 
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{2}
 
 \title{The Fourier Transform: Variations and Applications}
 
@@ -215,6 +215,7 @@ $$
 In order to better understand the results of the Fast Fourier Transform, it may be useful to write code to explore a Pythonic implementation, and  plot the signals in order to visualize the results of the Fast Fourier Transform. There are existing libraries in Python to aid with the visualization of the Fast Fourier Transformation. These include numpy and matplotlib. Numpy is useful for existing libraries that make it possible to manipulate an entire array with a single operation as well as contains the function to perform the Fast Fourier Transformation. Matplotlib is the library that contains the function to fully plot a dataset. Given a signal, the following method plots both the signal in real space as well as in frequency space:
 
 \begin{Verbatim}[tabsize=4]
+
 def plot_signal(signal):
 	signal_fft = np.fft.fft(signal)
 	signal_fft_pow = np.abs(signal_fft)
@@ -223,6 +224,7 @@ def plot_signal(signal):
 	plt.clf()
 	plt.plot(signal_fft_pow, '-o', markersize = 2)
 	plt.savefig('FrequencySpace.png')
+	
 \end{Verbatim}
 
 With that information, we are able to quickly find the FFT of different waves in real space in frequency space. Here are a few examples generated as a result of the python code included above. 
@@ -388,27 +390,27 @@ The two-dimensional DFT is an essential part of modern image processing and is e
 In order to better explain the two-dimensional Discrete Fourier Transform, it may help to suggest a Python implementation for the algorithm to automate the conversion between an image and its Fourier Transform. Just like the one-dimensional Fast Fourier Transform, there are multiple existing tools and libraries to aid with the visualization of the two-dimensional Discrete Fourier Transform. Like the implementation of the 1-D FFT, the method to visualize the 2-D DFT involved numpy and matplotlib. In order to generate images, the 2-D DFT method also involves a library known as Pillow/PIL. Given an image, the following method displays the image as well as it's 2-D Discrete Fourier Transform:
 
 \begin{Verbatim}[tabsize=4]
+
 def plot_2d_dft(image):
 	img = Image.open(image)
 	img_arr = np.asarray(img)
 	fourier = np.fft.fft2(img_arr)
 	fourier = np.fft.fftshift(fourier)
-
+	
 	fourier = np.abs(fourier)
-
 	fourier = fourier + 0.0000001
 	fourier = np.log10(fourier)
-
+	
 	lowest = np.nanmin(fourier[np.isfinite(fourier)])
 	highest = np.nanmax(fourier[np.isfinite(fourier)])
-
 	original_range = highest - lowest
 	norm_fourier = (fourier - lowest) / original_range * 255
-
 	fourier_img = Image.fromarray(norm_fourier.astype('uint8'))
-
 	fourier_img.save('2ddft1.png')
+	
 \end{Verbatim}
+
+With this method, we are able to generate the two-dimensional DFT for any black and white image. Here is an example of the method being run on the image on the left:
 
 \begin{figure}[h]
 \centering
