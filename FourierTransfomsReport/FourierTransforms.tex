@@ -385,6 +385,47 @@ The two-dimensional DFT is an essential part of modern image processing and is e
 \label{fig:im2}
 \end{figure}
 
-In order to better explain the two-dimensional Discrete Fourier Transform, it may help to suggest a Python implementation for the algorithm to automate the conversion between an image and its Fourier Transform. Just like the one-dimensional Fast Fourier Transform, there are multiple existing tools and libraries to aid with the visualization of the two-dimensional Discrete Fourier Transform. Like the implementation of the 1-D FFT, the method to visualize the 2-D DFT involved numpy and matplotlib. In order to generate images, the 2-D DFT method also involves a library known as Pillow/PIL. Given an image, the following method displays the image as well as it's 2-D Discrete Fourier Transform. 
+In order to better explain the two-dimensional Discrete Fourier Transform, it may help to suggest a Python implementation for the algorithm to automate the conversion between an image and its Fourier Transform. Just like the one-dimensional Fast Fourier Transform, there are multiple existing tools and libraries to aid with the visualization of the two-dimensional Discrete Fourier Transform. Like the implementation of the 1-D FFT, the method to visualize the 2-D DFT involved numpy and matplotlib. In order to generate images, the 2-D DFT method also involves a library known as Pillow/PIL. Given an image, the following method displays the image as well as it's 2-D Discrete Fourier Transform:
+
+\begin{Verbatim}[tabsize=4]
+def plot_2d_dft(image):
+	img = Image.open(image)
+	img_arr = np.asarray(img)
+	fourier = np.fft.fft2(img_arr)
+	fourier = np.fft.fftshift(fourier)
+
+	fourier = np.abs(fourier)
+
+	fourier = fourier + 0.0000001
+	fourier = np.log10(fourier)
+
+	lowest = np.nanmin(fourier[np.isfinite(fourier)])
+	highest = np.nanmax(fourier[np.isfinite(fourier)])
+
+	original_range = highest - lowest
+	norm_fourier = (fourier - lowest) / original_range * 255
+
+	fourier_img = Image.fromarray(norm_fourier.astype('uint8'))
+
+	fourier_img.save('2ddft1.png')
+\end{Verbatim}
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}{.4\textwidth}
+	\centering
+	\includegraphics[scale=.3]{images/dftraw1.png}
+	\caption{Original Image}
+	\label{fig:sub11}
+\end{subfigure} \hspace{15mm}
+\begin{subfigure}{.4\textwidth}
+	\centering
+	\includegraphics[scale=.3]{images/2ddft1.png}
+	\caption{Fourier Transform}
+	\label{fig:sub12}
+\end{subfigure}
+\caption{The Two-Dimensional DFT of an Image}
+\label{fig:im3}
+\end{figure}
 
 \end{document}

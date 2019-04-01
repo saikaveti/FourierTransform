@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  31 MAR 2019 19:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  31 MAR 2019 20:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -502,27 +502,48 @@ File: images/dftimage3.png Graphic file (type png)
 <use images/dftimage3.png>
 Package pdftex.def Info: images/dftimage3.png  used on input line 380.
 (pdftex.def)             Requested size: 75.532pt x 56.20985pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 390.
  [9 <./images/gamma.png> <./images/xray.png> <./images/uv.png> <./images/dftima
 ge1.png> <./images/dftimage2.png> <./images/dftimage3.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 390.
+<images/dftraw1.png, id=132, 516.93124pt x 487.8225pt>
+File: images/dftraw1.png Graphic file (type png)
+<use images/dftraw1.png>
+Package pdftex.def Info: images/dftraw1.png  used on input line 417.
+(pdftex.def)             Requested size: 155.08057pt x 146.34787pt.
+
+Overfull \hbox (11.08276pt too wide) in paragraph at lines 417--418
+ [][] 
+ []
+
+<images/2ddft1.png, id=133, 516.93124pt x 487.8225pt>
+File: images/2ddft1.png Graphic file (type png)
+<use images/2ddft1.png>
+Package pdftex.def Info: images/2ddft1.png  used on input line 423.
+(pdftex.def)             Requested size: 155.08057pt x 146.34787pt.
+
+Overfull \hbox (11.08276pt too wide) in paragraph at lines 423--424
+ [][] 
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 431.
+[10 <./images/dftraw1.png> <./images/2ddft1.png (PNG copy)>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 431.
 
 (./FourierTransforms.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 390.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 390.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 431.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 431.
 Package rerunfilecheck Info: File `FourierTransforms.out' has not changed.
 (rerunfilecheck)             Checksum: 1BC1F8080A3F4AD36C1F54681679B946;289.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 390.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 431.
  ) 
 Here is how much of TeX's memory you used:
- 8569 strings out of 492649
- 126978 string characters out of 6129622
- 221661 words of memory out of 5000000
- 12144 multiletter control sequences out of 15000+600000
+ 8586 strings out of 492649
+ 127261 string characters out of 6129622
+ 221920 words of memory out of 5000000
+ 12157 multiletter control sequences out of 15000+600000
  11669 words of font info for 45 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  36i,12n,39p,1081b,536s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -542,10 +563,10 @@ ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/
 018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/201
 8/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2018
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on FourierTransforms.pdf (9 pages, 1492768 bytes).
+Output written on FourierTransforms.pdf (10 pages, 1687941 bytes).
 PDF statistics:
- 197 PDF objects out of 1000 (max. 8388607)
- 144 compressed objects within 2 object streams
- 43 named destinations out of 1000 (max. 500000)
- 93 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 204 PDF objects out of 1000 (max. 8388607)
+ 148 compressed objects within 2 object streams
+ 45 named destinations out of 1000 (max. 500000)
+ 103 words of extra memory for PDF output out of 10000 (max. 10000000)
 
