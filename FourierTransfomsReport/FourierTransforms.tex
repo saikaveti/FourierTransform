@@ -37,6 +37,33 @@
 \tableofcontents
 \newpage
 
+\section{Complex Analysis Fundamentals}
+
+\subsection{Basic Properties of Complex Numbers}
+
+\mbox{}	 \\
+\indent Saff and Snider, in \textit{Fundamentals of Complex Analysis with Applications to Engineering and Science} introduce a \textbf{complex number} as an expression in the form $a + bi$, where $a$ and $b$ must be real numbers. Two complex numbers $a +bi$ and $c + di$ can only be equal if and only if $a = c$ and $b = d$. For future reference, complex numbers will be referred to as $z$ where $z = a+bi$. A complex number $a+bi$ exists on the complex plane as a rectangular coordinate $(a, b)$. The following properties of complex numbers will be used over the course of this paper:
+
+\begin{enumerate}
+	\item $z = a+bi$
+	\item $\bar{z} = a - bi$
+	\item $|z| = \sqrt{a^2 + b^2}$
+	\item $\overline{(z_1 z_2)} = \bar{z_1}\bar{z_2}$
+	\item $Re(z) = a = \frac{z + \bar{z}}{2}$
+	\item $Im(z) = b = \frac{z - \bar{z}}{2i}$
+	\item $z \bar{z} = |z|^2$
+	\item $|z_1 + z_2| \leq |z_1| + |z_2|$
+\end{enumerate}
+
+A complex number
+
+\subsection{Roots of Unity}
+
+\mbox{}	 \\
+\indent Before starting the Fast Fourier Transform (FFT), it is important to introduce a concept known as complex roots of unity. A complex $n^{th}$ root of unity is a complex number $\omega$ such that $\omega^n = 1$. As the name suggests, there are a total of $n$ distinct complex $n^{th}$ roots of unity. In order to find all $n$ complex roots of unity, we say $\omega_k = e^{\frac{2 \pi i k}{n}}, \forall k \in \{0, 1, 2, ... , n-1\}$. When $k = 0$, we yield the trivial solution of $\omega = 1$.
+
+\subsection{Euler's Formula}
+
 \section{The Fourier Transform}
 
 \subsection{Developing an Intuition for the Fourier Transform}
@@ -109,19 +136,35 @@ f(x)  &= \int_{-\infty}^{\infty} F(s) e^{i2 \pi x s}ds
 f(x) &= \sum_{s=0}^{N-1} F(s) e^{-i2 \pi x s / N}
 \end{align*}
 
+In \textit{The Discrete Fourier Transform}, Sundararajan claims that the DFT is able to transform a $N$-point time-domain sequence into a set of $N$ frequency coefficients that represent the given time-domain sequence in frequency domain. These coefficients represent magnitudes and the amplitudes of the composite $sine$ and $cosine$ counterparts. When these composite functions are added, the original time-domain sequence is represented. However, we are presented with a strange dilemma. It doesn't seem intuitive to represent a finite length sequence with a sum of infinite sinusoidal waves. However, any finite length sequence that is the sum of sinusoidal waves must be periodic, and thus can be extended periodically. On the other hand, the IDFT can transform the $N$ frequency coefficients back into the original set of $N$ time-domain samples but creating a composition of the sinusoidal waves to generate the original signal. Thus, every signal has two characterizations: its $N$ time-domain samples or its $N$ frequency coefficients.
 
+There are also several interesting properties of the Discrete Fourier Transformation that hold true that allow for more informative results. An example of such a property is known as \textbf{Parseval's Theorem}. This theorem implies that the sums of the squared magnitudes of the signal and the DFT sequences are directly related by the constant $N$, which has already been established as the number of samples. Mathematically, we can write that
+
+$$
+\sum_{n=0}^{N-1} |x(n)|^2 = \frac{1}{N} \sum_{k=0}^{N-1} |X(k)|^2
+$$
+
+Sundararajan explains the proof as the following:
+
+\begin{align*}
+\intertext{Since the square of the magnitude of a complex number can be written in terms of its and its conjugate, the following holds true:}
+\sum_{n=0}^{N-1} |x(n)|^2 &= \sum_{n=0}^{N-1} x(n) x^{*}(n)
+\intertext{Substituting the corresponding IDFT expressions for both x(n) and its conjugate, we can get}
+&= \sum_{n=0}^{N-1} \frac{1}{N^2} \sum_{k=0}^{N-1} \sum_{m=0}^{N-1} X(k)X^{*}(m)W_{N}^{-n(k-m)} \\
+&= \frac{1}{N^2} \sum_{k=0}^{N-1} \sum_{m=0}^{N-1} X(k)X^{*}(m) \sum_{n=0}^{N-1} W_{N}^{-n(k-m)} \\
+\intertext{When k = m, this expression can be simplified to}
+&= \frac{1}{N} \sum_{k=0}^{N-1} X(k) X^{*}(k) \\
+&= \frac{1}{N} \sum_{k=0}^{N-1} |X(k)|^2 
+\intertext{When this does not hold true, the equation reduced to zero because of the orthogonal property}
+\end{align*}
 
 \subsection{How the Discrete Fourier Transform varies from the Fourier Transform}
+
+
 
 \section{The Computation of the Discrete Fourier Transform}
 
 \subsection{A Rudimentary Algorithm for the Discrete Fourier Transform}
-
-\subsection{Roots of Unity}
-
-\mbox{}	 \\
-\indent Before starting the Fast Fourier Transform (FFT), it is important to introduce a concept known as complex roots of unity. A complex $n^{th}$ root of unity is a complex number $\omega$ such that $\omega^n = 1$. As the name suggests, there are a total of $n$ distinct complex $n^{th}$ roots of unity. In order to find all $n$ complex roots of unity, we say $\omega_k = e^{\frac{2 \pi i k}{n}}, \forall k \in \{0, 1, 2, ... , n-1\}$. When $k = 0$, we yield the trivial solution of $\omega = 1$.
-
 
 \subsection{The Fast Fourier Tranform}
 
@@ -360,7 +403,7 @@ f(x, y) &= \frac{1}{MN}\sum_{x=0}^{M-1}\sum_{y=0}^{N-1} F(u, v) e^{i2\pi (ux/M +
 \end{align*}
 In this case, $f(x, y)$ is a digital image of size $M \times N$, and just like in the 1-D case, must be evaluated for the discrete values $u$ and $v$ in the ranges $u = 0, 1, 2, ..., M-1$ and $v = 0, 1, 2, ... , N-1$
 
-The two-dimensional DFT is an essential part of modern image processing and is essential in various aliasing and filtering techniques. For example, look at the application of the Discrete Fourier Transform on the following image:
+The two-dimensional DFT is an essential part of modern image processing and is essential in various aliasing and filtering techniques. For example, Gonzalez includes following application of the Discrete Fourier Transform:
 
 
 \begin{figure}[h]
