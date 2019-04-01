@@ -516,8 +516,18 @@ With this method, we are able to generate the two-dimensional DFT for any black 
 
 \subsection{Audio Compression}
 
-\section{A Comparison between the FFT and Principal Component Analysis}
+\section{A Comparison between Principal Component Analysis and FFT}
 
+\mbox{}	 \\
+\indent The Fast Fourier Transform (FFT) can be best described as an algorithm that computes the Discrete Fourier Transform (DFT), which is responsible from converting a signal from its original domain to its representation in the frequency domain. Principal Component Analysis (PCA) is a machine learning algorithm that is a method of dimensionality reduction. Given a set of tuples or vectors that has $n$ attributes, PCA determines $k$ $n$-dimensional orthogonal vectors that can nearly equivalently represent the data. This is a very important algorithm to reduce the number of attributes in a dataset while still retaining the statistical differences between tuples. Han, Kember, and Pei, the authors of \textit{Data Mining: Concepts and Techniques}, describe the algorithm for PCA as the following:
+
+\begin{enumerate}
+	\item The input data are normalized, so that each attribute falls within the same range. The normalization scale that is chosen is mostly a design decision, but the most common is $z$-score normalization. This step helps ensure that the attributes with large domains will not dominate attributes with smaller domains.
+	\item PCA then computes $k$ orthonormal vectors that provide a basis for the normalized input data. These are unit vectors that each point in a direction perpendicular to the others. These are unit vectors that each point in a direction perpendicular. This means that the dot-product of any two vectors must be $0$. These vectors are commonly refered to as the \textit{principal components}
+	\item $|z| = \sqrt{a^2 + b^2}$
+	\item $\overline{(z_1 z_2)} = \bar{z_1}\bar{z_2}$
+
+\end{enumerate}
 
 \newpage
 \section{Bibliography}

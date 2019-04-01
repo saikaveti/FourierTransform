@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  1 APR 2019 01:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  1 APR 2019 15:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -516,25 +516,31 @@ Overfull \hbox (11.08276pt too wide) in paragraph at lines 509--510
  [][] 
  []
 
-[13 <./images/dftraw1.png> <./images/2ddft1.png (PNG copy)>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 525.
- [14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 525.
+[13 <./images/dftraw1.png> <./images/2ddft1.png (PNG copy)>] [14]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 535.
+ [15]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 535.
 
 (./FourierTransforms.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 525.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 525.
-Package rerunfilecheck Info: File `FourierTransforms.out' has not changed.
-(rerunfilecheck)             Checksum: 54EC7CAE9F3FB4CA45B0F244C034418F;1615.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 535.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 535.
 
+
+Package rerunfilecheck Warning: File `FourierTransforms.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `FourierTransforms.out':
+(rerunfilecheck)             Before: 54EC7CAE9F3FB4CA45B0F244C034418F;1615
+(rerunfilecheck)             After:  B46A717B356D914D45A52C52C8C0FDB6;1611.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 525.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 535.
  ) 
 Here is how much of TeX's memory you used:
- 8618 strings out of 492649
- 127622 string characters out of 6129622
+ 8623 strings out of 492649
+ 127657 string characters out of 6129622
  221934 words of memory out of 5000000
  12173 multiletter control sequences out of 15000+600000
  11669 words of font info for 45 fonts, out of 8000000 for 9000
@@ -556,10 +562,10 @@ ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/
 018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/201
 8/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2018
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on FourierTransforms.pdf (14 pages, 1702897 bytes).
+Output written on FourierTransforms.pdf (15 pages, 1705224 bytes).
 PDF statistics:
- 301 PDF objects out of 1000 (max. 8388607)
- 240 compressed objects within 3 object streams
- 61 named destinations out of 1000 (max. 500000)
+ 309 PDF objects out of 1000 (max. 8388607)
+ 247 compressed objects within 3 object streams
+ 66 named destinations out of 1000 (max. 500000)
  231 words of extra memory for PDF output out of 10000 (max. 10000000)
 
