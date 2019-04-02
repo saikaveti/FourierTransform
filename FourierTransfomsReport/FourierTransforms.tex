@@ -520,7 +520,22 @@ With this method, we are able to generate the two-dimensional DFT for any black 
 \mbox{}	 \\
 \indent Audio compression is an incredibly important field of study that attempts to address human and computer limitations on audio in order to effectively transmit information. In \textit{Audio Compression using Fourier Transform}, Perinati Tewari describes audio compression is the idea of encoding audio data to not only occupy less storage, but also less bandwidth for transmission. That being said, there are two conventional categories for compression, both of which are applicable for this algorithm: lossless and lossy compression. Tewari claims that lossless compression is done using various waveform coding techniques. What this means is that these techniques approximate the waveform with a more easily representable with a different sinusoidal function, and if the bit rate is large enough, get arbitrarily close to the original wave. A common technique is pulse code modulation (PCM), which is used by the CD. CD audio signals are conventionally samples at 44.1 kHz and traditionally add additional noise to the audio. However, this additional noise is not noticeable by the overwhelming majority of humans if the signal energy is large enough. In lossless compression, as highlighted, information is not lost. On the other hand, loss compression reduces redundancies  and any sounds that are considered irrelevant are either removes or significantly reduced.
 
-With that information, it becomes easy to imagine why 
+With that information, it becomes easy to imagine why the Fourier Transform is important for Audio Compression. More specifically, the FFT can be applied to a audio signal to convert it to an approximate, much smaller signal. In addition, before beginning, Tewari states that most audio compression software makes use of the psycho-acoustic properties of the human auditory system. This is an important note given that audio compression algorithms are allows to make discretionary decisions because audio compression is always ``filtered'' through the human ear. 
+
+Tewari proposes the following algorithm for using FFT to compress an audio signal:
+
+\begin{enumerate}
+
+	\item \textit{Level Detection: }The start of an input audio signal is identified by a stored threshold value
+	\item \textit{Framing: }The continuous signal is blocked into frames of N samples. It is important to note that each frame overlaps with subsequent frames,  a technique known as framing.
+	\item \textit{Windowing: }After framing, windowing is applied to prevent leakage. A windows is a shape that is nonzero for a certain period of time, and zero before and after that period. Thus, when a window is multiplied by a certain signal, it is zero everywhere except during of the nonzero period.
+	\item \textit{Fast Fourier Transform: }The FFT is applied to compute the DFT to conver the time domain signal into a frequency domain to yield a complex signal. It is important to note that the signal's FFT has both complex and real parts, as the FFT is expected to yield
+	\item \textit{Power Spectrum Calculation: }The power of the frequency domain is calculated by summing the square of the real and imaginary components of the signal to yield a real signal. The second half of the samples are always ignored in this case because they are symmetric to the first half.
+	\item \textit{Approximate Singal: }We can then build an approximate signal by taking the maximum frequency components of the maximum power frame
+
+\end{enumerate}
+
+In general, this algorithm is effective in using FFT reduce noise while still maintain the audio integrity of the sound. The following are a few visualizations of the algorithm being used to compress audio signals.
 
 \section{An Analysis of Principal Component Analysis and FFT}
 

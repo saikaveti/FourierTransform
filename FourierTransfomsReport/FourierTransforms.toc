@@ -16,7 +16,7 @@
 \contentsline {subsection}{\tocsubsection {}{5.1}{Multiplication of Polynomials}}{10}{subsection.5.1}
 \contentsline {subsection}{\tocsubsection {}{5.2}{Image Processing}}{11}{subsection.5.2}
 \contentsline {subsection}{\tocsubsection {}{5.3}{Audio Compression}}{13}{subsection.5.3}
-\contentsline {section}{\tocsection {}{6}{An Analysis of Principal Component Analysis and FFT}}{13}{section.6}
-\contentsline {subsection}{\tocsubsection {}{6.1}{A Brief Introduction to Principal Component Analysis}}{13}{subsection.6.1}
-\contentsline {subsection}{\tocsubsection {}{6.2}{A Comparison between PCA and FFT}}{14}{subsection.6.2}
-\contentsline {section}{\tocsection {}{7}{Bibliography}}{16}{section.7}
+\contentsline {section}{\tocsection {}{6}{An Analysis of Principal Component Analysis and FFT}}{14}{section.6}
+\contentsline {subsection}{\tocsubsection {}{6.1}{A Brief Introduction to Principal Component Analysis}}{14}{subsection.6.1}
+\contentsline {subsection}{\tocsubsection {}{6.2}{A Comparison between PCA and FFT}}{15}{subsection.6.2}
+\contentsline {section}{\tocsection {}{7}{Bibliography}}{17}{section.7}
