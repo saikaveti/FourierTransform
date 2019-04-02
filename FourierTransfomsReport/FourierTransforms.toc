@@ -19,5 +19,4 @@
 \contentsline {section}{\tocsection {}{6}{An Analysis of Principal Component Analysis and FFT}}{17}{section.6}
 \contentsline {subsection}{\tocsubsection {}{6.1}{A Brief Introduction to Principal Component Analysis}}{17}{subsection.6.1}
 \contentsline {subsection}{\tocsubsection {}{6.2}{A Comparison between PCA and FFT}}{17}{subsection.6.2}
-\contentsline {section}{\tocsection {}{7}{Bibliography}}{20}{section.7}
 \contentsline {section}{\tocsection {}{}{References}}{20}{section*.10}
