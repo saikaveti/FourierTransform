@@ -296,7 +296,8 @@ $$
 
 \subsection{A Python Implementation of the Fast Fourier Transform}
 
-In order to better understand the results of the Fast Fourier Transform, it may be useful to write code to explore a Pythonic implementation, and  plot the signals in order to visualize the results of the Fast Fourier Transform. There are existing libraries in Python to aid with the visualization of the Fast Fourier Transformation. These include numpy and matplotlib. Numpy is useful for existing libraries that make it possible to manipulate an entire array with a single operation as well as contains the function to perform the Fast Fourier Transformation. Matplotlib is the library that contains the function to fully plot a dataset. Given a signal, the following method plots both the signal in real space as well as in frequency space:
+\mbox{}	 \\
+\indent In order to better understand the results of the Fast Fourier Transform, it may be useful to write code to explore a Pythonic implementation, and  plot the signals in order to visualize the results of the Fast Fourier Transform. There are existing libraries in Python to aid with the visualization of the Fast Fourier Transformation. These include numpy and matplotlib. Numpy is useful for existing libraries that make it possible to manipulate an entire array with a single operation as well as contains the function to perform the Fast Fourier Transformation. Matplotlib is the library that contains the function to fully plot a dataset. Given a signal, the following method plots both the signal in real space as well as in frequency space:
 
 \begin{Verbatim}[tabsize=4]
 
@@ -516,6 +517,11 @@ With this method, we are able to generate the two-dimensional DFT for any black 
 
 \subsection{Audio Compression}
 
+\mbox{}	 \\
+\indent Audio compression is an incredibly important field of study that attempts to address human and computer limitations on audio in order to effectively transmit information. In \textit{Audio Compression using Fourier Transform}, Perinati Tewari describes audio compression is the idea of encoding audio data to not only occupy less storage, but also less bandwidth for transmission. That being said, there are two conventional categories for compression, both of which are applicable for this algorithm: lossless and lossy compression. Tewari claims that lossless compression is done using various waveform coding techniques. What this means is that these techniques approximate the waveform with a more easily representable with a different sinusoidal function, and if the bit rate is large enough, get arbitrarily close to the original wave. A common technique is pulse code modulation (PCM), which is used by the CD. CD audio signals are conventionally samples at 44.1 kHz and traditionally add additional noise to the audio. However, this additional noise is not noticeable by the overwhelming majority of humans if the signal energy is large enough. In lossless compression, as highlighted, information is not lost. On the other hand, loss compression reduces redundancies  and any sounds that are considered irrelevant are either removes or significantly reduced.
+
+With that information, it becomes easy to imagine why 
+
 \section{An Analysis of Principal Component Analysis and FFT}
 
 \subsection{A Brief Introduction to Principal Component Analysis}
@@ -532,6 +538,23 @@ With this method, we are able to generate the two-dimensional DFT for any black 
 \end{enumerate}
 
 \subsection{A Comparison between PCA and FFT}
+
+\mbox{}	 \\
+\indent In summary, the Fast Fourier Transform (FFT) can be best described as an algorithm that computes the Discrete Fourier Transform (DFT), which is responsible from converting a signal from its original domain to its representation in the frequency domain. In a similar vein, PCA serves as a reduction algorithm, shrinking the number of attributes that express a dataset. Heuristically, the FFT and PCA function similarly, breaking down information into smaller parts. This raises a rather interesting question. Can we potentially use PCA where we conventionally use FFT, and if not, what advantages does the FFT have over the PCA?
+
+An important note is that the FFT makes several assumptions about the data that we do not have to make about datasets where we perform PCA. In FFT, we need to be working with a periodic signal if we are interested in performing a one-dimensional FFT. No such assumption needs to be made in PCA. In addition, PCA can be performed on any matrix of any size with no significant computational overhead, while a multi-dimensional Discrete Fourier Transform can become more computationally sensitive as the number of summations in the Discrete Fourier Transform increases linearly with the number of dimensions of the DFT.
+
+That being said, PCA is not inherently capable of replicating the results of a FFT. PCA is, at its core, a data compression algorithm.  From Christopher Bishop's \textit{Pattern Recognition and Machine Learing}, the following example is the result of the PCA algorithm performed on an image, with $M$ representing the number principal components.
+
+\begin{figure}[h]
+	\includegraphics[scale=.5]{images/pca.png}
+	\caption{PCA on an image with different number of principal components}
+	\label{fig:pca}
+\end{figure}
+
+As seen, we can choose to refine the number of attributes that we keep, making the result of our PCA analysis very similar to the original. Such a property is not available in our implementation of the Discrete Fourier Transform. As seen earlier, the DFT automatically retains the frequencies that compose the rest of the image. In addition, the DFT holds the property that it can be easily reverted with the IDFT, something that does not equivalently exist in PCA. While there are image processing techniques that are capable of sharpening an image, they are not an inverse of PCA. The fact that the DFT has an inverse function makes it an extremely valuable transformation when compared to machine learning data reduction algorithms such as PCA.
+
+In short, while the FFT and DFT have more specific prerequisites for the signal, they are more informative and effective in generating composite frequencies.
 
 \newpage
 \section{Bibliography}
