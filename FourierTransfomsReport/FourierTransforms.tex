@@ -29,6 +29,8 @@
 
 \author{Sailesh Kaveti}
 
+\renewcommand{\baselinestretch}{1.25}
+
 \begin{document}
 
 \maketitle
@@ -495,7 +497,7 @@ def plot_2d_dft(image):
 	
 \end{Verbatim}
 
-With this method, we are able to generate the two-dimensional DFT for any black and white image. Here is an example of the method being run on the image on the left:
+With this method, we are able to generate the two-dimensional DFT for any black and white image. Here are a few examples of the method being run on the image on the left:
 
 \begin{figure}[h]
 \centering
@@ -511,7 +513,25 @@ With this method, we are able to generate the two-dimensional DFT for any black 
 	\caption{Fourier Transform}
 	\label{fig:sub12}
 \end{subfigure}
-\caption{The Two-Dimensional DFT of an Image}
+\caption{The Two-Dimensional DFT of Image 1}
+\label{fig:im3}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}{.4\textwidth}
+	\centering
+	\includegraphics[scale=.55]{images/circles.png}
+	\caption{Original Image}
+	\label{fig:sub11}
+\end{subfigure} \hspace{15mm}
+\begin{subfigure}{.4\textwidth}
+	\centering
+	\includegraphics[scale=.6]{images/2ddft2.png}
+	\caption{Fourier Transform}
+	\label{fig:sub12}
+\end{subfigure}
+\caption{The Two-Dimensional DFT of Image 2}
 \label{fig:im3}
 \end{figure}
 
@@ -535,7 +555,7 @@ Tewari proposes the following algorithm for using FFT to compress an audio signa
 
 \end{enumerate}
 
-In general, this algorithm is effective in using FFT reduce noise while still maintain the audio integrity of the sound. The following are a few visualizations of the algorithm being used to compress audio signals.
+In general, this algorithm is effective in using FFT reduce noise while still maintain the audio integrity of the sound. 
 
 \section{An Analysis of Principal Component Analysis and FFT}
 
@@ -562,14 +582,14 @@ An important note is that the FFT makes several assumptions about the data that 
 That being said, PCA is not inherently capable of replicating the results of a FFT. PCA is, at its core, a data compression algorithm.  From Christopher Bishop's \textit{Pattern Recognition and Machine Learing}, the following example is the result of the PCA algorithm performed on an image, with $M$ representing the number principal components.
 
 \begin{figure}[h]
-	\includegraphics[scale=.5]{images/pca.png}
+	\includegraphics[scale=.6]{images/pca.png}
 	\caption{PCA on an image with different number of principal components}
 	\label{fig:pca}
 \end{figure}
 
 As seen, we can choose to refine the number of attributes that we keep, making the result of our PCA analysis very similar to the original. Such a property is not available in our implementation of the Discrete Fourier Transform. As seen earlier, the DFT automatically retains the frequencies that compose the rest of the image. In addition, the DFT holds the property that it can be easily reverted with the IDFT, something that does not equivalently exist in PCA. While there are image processing techniques that are capable of sharpening an image, they are not an inverse of PCA. The fact that the DFT has an inverse function makes it an extremely valuable transformation when compared to machine learning data reduction algorithms such as PCA.
 
-In short, while the FFT and DFT have more specific prerequisites for the signal, they are more informative and effective in generating composite frequencies.
+In short, while the FFT and DFT have more specific prerequisites for the signal, they are more informative and effective in generating composite frequencies. The FFT algorithm is extremely effective in decomposing images quickly as long as they exist on the real space, while the PCA algorithm is effective in breaking down a numeric dataset into fewer, more valuable attributes.
 
 \newpage
 \section{Bibliography}

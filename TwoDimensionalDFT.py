@@ -11,8 +11,6 @@ fourier = np.fft.fftshift(fourier)
 
 fourier = np.abs(fourier)
 
-print(fourier)
-
 fourier = fourier + 0.0000001
 fourier = np.log10(fourier)
 
@@ -26,6 +24,6 @@ norm_fourier = (fourier - lowest) / original_range * 255
 
 fourier_img = Image.fromarray(norm_fourier.astype('uint8'))
 
-print(fourier_img)
+#print(fourier_img)
 
 fourier_img.save('2ddft1.png')
