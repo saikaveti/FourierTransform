@@ -44,7 +44,7 @@
 \subsection{Basic Properties of Complex Numbers}
 
 \mbox{}	 \\
-\indent Saff and Snider, in \textit{Fundamentals of Complex Analysis with Applications to Engineering and Science} introduce a \textbf{complex number} as an expression in the form $a + bi$, where $a$ and $b$ must be real numbers and $i = \sqrt{-1}$. Two complex numbers $a +bi$ and $c + di$ can only be equal if and only if $a = c$ and $b = d$. For future reference, complex numbers will be referred to as $z$ where $z = a+bi$. A complex number $a+bi$ exists on the complex plane as a rectangular coordinate $(a, b)$. The following properties of complex numbers will be used over the course of this paper:
+\indent A \textbf{complex number} is an expression in the form $a + bi$, where $a$ and $b$ must be real numbers and $i = \sqrt{-1}$. Two complex numbers $a +bi$ and $c + di$ can only be equal if and only if $a = c$ and $b = d$. For future reference, complex numbers will be referred to as $z$ where $z = a+bi$. A complex number $a+bi$ exists on the complex plane as a rectangular coordinate $(a, b)$. The following properties of complex numbers will be used over the course of this paper \cite{Saff}.
 
 \begin{enumerate}
 	\item $z = a+bi$
@@ -71,48 +71,20 @@ It is important to note that
 $$
 \theta = tan^{-1}\Big(\frac{y}{x}\Big)
 $$
-does not necessarily hold true because $\theta$ can exist in different quadrants while $tan(\theta)$ still has the same value.
-
-\subsection{Roots of Unity}
-
-\mbox{}	 \\
-\indent Before starting the Fast Fourier Transform (FFT), it is important to introduce a concept known as complex roots of unity. A complex $n^{th}$ root of unity is a complex number $\omega$ such that $\omega^n = 1$. As the name suggests, there are a total of $n$ distinct complex $n^{th}$ roots of unity. In order to find all $n$ complex roots of unity, we say $\omega_k = e^{\frac{2 \pi i k}{n}}, \forall k \in \{0, 1, 2, ... , n-1\}$. When $k = 0$, we yield the trivial solution of $\omega = 1$.
+does not necessarily hold true because $\theta$ can exist in different quadrants while $tan(\theta)$ still has the same value \cite{Saff}.
 
 \subsection{Euler's Formula}
 
 \mbox{}	 \\
-\indent In this subsection, we explore the relationship between the mathematical constant $e$ and the trigonometric functions $cosine$ and $sine$ as well as the imaginary constant $i$. Let $z = x + iy$.
-
-\begin{align*}
-z &= x + iy \\
-e^{z} &= e^{x+iy} \\
-&= e^x e^{iy}
-\intertext{We can then differentiate the second term on the right hand side to determine that}
-\frac{de^{iy}}{d(iy)} &= e^{iy} \\
-\frac{de^{iy}}{dy} &= ie^{iy}
-\intertext{Differentiating again, we get: }
-\frac{d^2e^{iy}}{dy^2} &= \frac{d}{dy}(ie^{iy}) \\
-&= i^2 e^{iy} \\
-&= -e^{iy}
-\intertext{We are left with the following differential equation, that if}
-g(y) &= e^{iy}
-\intertext{then, }
-\frac{d^2g}{dy^2} &= -g
-\intertext{and that any function in the form of }
-g(y) &= Acos(y) + B sin(y)
-\intertext{satisfies the differential equation. To evaluage A and B, we can use the following equations: }
-g(0) &= e^{i0} = 1 = A cos(0) + B sin(0) \\
-\frac{dg}{dy}(0) &= ie^{i0} = i = -Asin(0) +Bcos(0)
-\intertext{Thus, }
-& \quad \quad A = 1 \quad \quad B = i
-\intertext{and}
-e^{iy} &= cos(y) + i sin(y)
-\end{align*}
-Thus, \textbf{Euler's Formula} is as follows:
+\indent In this subsection, we explain the relationship between the mathematical constant $e$ and the trigonometric functions $cosine$ and $sine$ as well as the imaginary constant $i$. Let $z = x + iy$. \textbf{Euler's Formula} states that \cite{Saff}
 $$
 e^{i\theta} = cos(\theta) + i sin(\theta)
 $$
 
+\subsection{Roots of Unity}
+
+\mbox{}	 \\
+\indent Before starting the Fast Fourier Transform (FFT), it is important to introduce a concept known as complex roots of unity. A complex $n^{th}$ root of unity is a complex number $\omega$ such that $\omega^n = 1$. As the name suggests, there are a total of $n$ distinct complex $n^{th}$ roots of unity. In order to find all $n$ complex roots of unity, we say $\omega_k = e^{\frac{2 \pi i k}{n}}, \forall k \in \{0, 1, 2, ... , n-1\}$. This property holds true because of the Euler's Formula shown above. When $k = 0$, we yield the trivial solution of $\omega = 1$ \cite{Saff}.
 
 \section{The Fourier Transform}
 
@@ -130,7 +102,7 @@ $$
 f(t) = \sum_{n = 0}^{\infty} [\hat f_+(n)\cos \Big(\frac{\pi n t}{T}\Big) + \hat f_-(n)\sin \Big(\frac{\pi n t}{T}\Big)]
 $$
 
-From this, we can derive the equations for $\hat f_+(n)$ and $\hat f_-(n)$. The equations are as follows
+From this, we can derive the equations for $\hat f_+(n)$ and $\hat f_-(n)$. The equations are as follows \cite{Dym}
 
 \begin{align*}
 \hat f_+(n)  &= \frac{1}{L}\int_{-L}^{L} f(t) cos\Big(\frac{n\pi x}{L}\Big)dx \\
@@ -143,14 +115,14 @@ $$
 g(x) = \sum_{n = 0}^{\infty} \frac{sin((2n + 1)x)}{(2n + 1)}
 $$
 
-The intuition behind a Fourier Series is very similar to a Taylor or MacLaurin Series, where a complex function can be modeled and very closely  as an infinite sum of simpler functions.
+The intuition behind a Fourier Series is very similar to a Taylor or MacLaurin series, where a complex function can be modeled and very closely  as an infinite sum of simpler functions. However, there is a clear difference between a Taylor series vs. a Fourier series. While a Fourier series can represent a periodic function as a sum of sinusoidal waves, a Taylor series is bound to representing any function as a sum of polynomials. An important distinction to make is that the Fourier series is designed to work for periodic functions, while we are not allowed to make the same assumption for a Taylor Series, and instead are bound to a ``radius of convergence'' where the Taylor series must converge to the original function. Thus, the Taylor series is a strong approximation in the area around a single point, while the Fourier series is a good approximation over all points of a periodic function.
 
 \subsection{The Computation of the Fourier Transform}
 
 \mbox{}	\\
 \indent Similar to colors, given a complex wave, it is important to know the frequencies that compose that wave. The inverse of this can also provide us with valuable information. A wave $f(x)$ exists in real space, and its equivalent in frequency space is function $F(s)$. In short, $f(x)$ gives us a complex wave in real space, while $F(s)$ gives us a function with peaks at the frequencies that make up $f(x)$.
 
-As described in \textit{The Fourier Transforms and Its Applications}, the following relationship between F(s) and f(x) exists:
+The following relationship between F(s) and f(x) exists \cite{Bracewell}
 \begin{align*}
 \intertext{The Fourier Transform:}
 F(s)  &= \int_{-\infty}^{\infty} f(x) e^{-i2 \pi x s}dx
@@ -158,7 +130,7 @@ F(s)  &= \int_{-\infty}^{\infty} f(x) e^{-i2 \pi x s}dx
 f(x)  &= \int_{-\infty}^{\infty} F(s) e^{i2 \pi x s}ds
 \end{align*}
 
-Replacing any instances of $e^{i\theta}$ with $cos(\theta) + isin(\theta)$, we can derive the following equivalent expressions:
+Replacing any instances of $e^{i\theta}$ with $cos(\theta) + isin(\theta)$, we can derive the following equivalent expressions \cite{Bracewell}
 \begin{align*}
 \intertext{The Fourier Transform:}
 F(s)  &= \int_{-\infty}^{\infty} f(x) (cos(-2 \pi x s) + isin(-2 \pi x s))dx
@@ -166,35 +138,34 @@ F(s)  &= \int_{-\infty}^{\infty} f(x) (cos(-2 \pi x s) + isin(-2 \pi x s))dx
 f(x)  &= \int_{-\infty}^{\infty} F(s) (cos(2 \pi x s) + isin(2 \pi x s))ds
 \end{align*}
 
-As a result, we can see a resemblance of a non-discretized version of the Fourier Series, which we can discretize for more interesting results in the following section.
+As a result, we can see a resemblance of a non-discretized version of the Fourier Series. As mentioned earlier, the Fourier series can represent a periodic function with a discrete sum, while the Fourier transform results in a more general, nonperiodic function over a continuous domain. We can equivalently say that the Fourier transform is the limit of the Fourier series as the limit of the period of the function approaches infinity, thus changing the bounds of integration from $(-L,L)$ to $(-\infty,+\infty)$. We can discretize for more interesting results in the following section.
 
 \section{The Discrete Fourier Transform}
 
 \subsection{The Basics of the Discrete Fourier Transform}
 
 \mbox{}	 \\
-\indent As the name suggests, the Discrete Fourier Transform (DFT) is a discretized, more applicable version of the regular Fourier Transform. According to Gonzalez and Woods, the authors of \textit{Digital Image Processing}, the DFT is a derivation of the Fourier Transform and the Inverse DFT is a derivation of the Inverse Fourier Transform. The derivation for the DFT and IDFT are not included, but involve sampling a finite number of points from the Fourier Transforms.
+\indent As the name suggests, the Discrete Fourier Transform (DFT) is a discretized, more applicable version of the regular Fourier Transform. The DFT is a derivation of the Fourier Transform and the Inverse DFT is a derivation of the Inverse Fourier Transform. While the formulas for the DFT and the IDFT are similar to their continuous counterparts, it is not immediately obvious why one would prefer the DFT over the Fourier transform and vice versa. The DFT is useful when you have only samples of the function, but not the function itself. It only works using over a discrete domain. For example, if you had experimental data, but had no function that modeled the data points, the DFT would be far more applicable than the Fourier Tranform, which only works over a continuous domain. With that being said, if you indeed have a function that models a periodic function, the Fourier transform can be computer either using a computer or manually in very rare cases. In addition, given a function, one could equivalently also sample a finite number of points and perform the DFT, yielding the same answer as the Fourier transform. The derivation for the DFT and IDFT are not included, but involve sampling a finite number of points from the Fourier Transforms. The FT and the IFT are included for reference \cite{Gonzalez}.
 
 \begin{align*}
 \intertext{The Fourier Transform:}
 F(s)  &= \int_{-\infty}^{\infty} f(x) e^{-i2 \pi x s}dx
 \intertext{The Discrete Fourier Transform:}
-F(s) &= \frac{1}{N} \sum_{x=0}^{N-1} f(x) e^{-i2 \pi x s / N}
+F(s) &=  \sum_{x=0}^{N-1} f(x) e^{-i2 \pi x s / N}
 \intertext{The Inverse Fourier Transform:}
 f(x)  &= \int_{-\infty}^{\infty} F(s) e^{i2 \pi x s}ds
 \intertext{The Inverse Discrete Fourier Transform}
-f(x) &= \sum_{s=0}^{N-1} F(s) e^{-i2 \pi x s / N}
+f(x) &= \frac{1}{N} \sum_{s=0}^{N-1} F(s) e^{i2 \pi x s / N}
 \end{align*}
 
-In \textit{The Discrete Fourier Transform}, Sundararajan claims that the DFT is able to transform a $N$-point time-domain sequence into a set of $N$ frequency coefficients that represent the given time-domain sequence in frequency domain. These coefficients represent magnitudes and the amplitudes of the composite $sine$ and $cosine$ counterparts. When these composite functions are added, the original time-domain sequence is represented. However, we are presented with a strange dilemma. It doesn't seem intuitive to represent a finite length sequence with a sum of infinite sinusoidal waves. However, any finite length sequence that is the sum of sinusoidal waves must be periodic, and thus can be extended periodically. On the other hand, the IDFT can transform the $N$ frequency coefficients back into the original set of $N$ time-domain samples but creating a composition of the sinusoidal waves to generate the original signal. Thus, every signal has two characterizations: its $N$ time-domain samples or its $N$ frequency coefficients.
+The DFT is able to transform a $N$-point time-domain sequence into a set of $N$ frequency coefficients that represent the given time-domain sequence in frequency domain. These coefficients represent amplitudes of the composite $sine$ and $cosine$ counterparts which arise from the $e^{-i2 \pi x s / N}$ term. The function is a summation of sinusoidal waves each with its own coefficient. When these composite functions are added, the original time-domain sampling of points can be found. However, we are presented with a strange dilemma. It doesn't seem intuitive to represent a finite length sequence with a sum of infinite sinusoidal waves. However, any finite length sequence that is the sum of sinusoidal waves must be periodic, and thus can be extended periodically. On the other hand, the IDFT can transform the $N$ frequency coefficients back into the original set of $N$ time-domain samples by creating a composition of the sinusoidal waves to generate the original signal. Thus, every signal has two characterizations: its $N$ time-domain samples or its $N$ frequency coefficients \cite{Sundararajan}.
 
-There are also several interesting properties of the Discrete Fourier Transformation that hold true that allow for more informative results. An example of such a property is known as \textbf{Parseval's Theorem}. This theorem implies that the sums of the squared magnitudes of the signal and the DFT sequences are directly related by the constant $N$, which has already been established as the number of samples. Mathematically, we can write that
+There are also several interesting properties of the Discrete Fourier Transformation that hold true that allow for more informative results. An example of such a property is known as \textbf{Parseval's Theorem}. This theorem implies that the sums of the squared magnitudes of the signal and the DFT sequences are directly related by the constant $N$, which has already been established as the number of samples. Let $x(n)$ be the original function and and $X$ be the set of frequencies such that $X(k)$ is the $k^{th}$ frequency. For reference, $W_{N}^{nk} = cos(\frac{2\pi}{N}nk) - isin(\frac{2\pi}{N}nk)$. Mathematically, we can write that
 
 $$
 \sum_{n=0}^{N-1} |x(n)|^2 = \frac{1}{N} \sum_{k=0}^{N-1} |X(k)|^2
 $$
-
-Sundararajan explains the proof as the following:
+The proof is as follows:
 \begin{align*}
 \intertext{Since the square of the magnitude of a complex number can be written in terms of its and its conjugate, the following holds true:}
 \sum_{n=0}^{N-1} |x(n)|^2 &= \sum_{n=0}^{N-1} x(n) x^{*}(n)
@@ -204,7 +175,7 @@ Sundararajan explains the proof as the following:
 \intertext{When k = m, this expression can be simplified to}
 &= \frac{1}{N} \sum_{k=0}^{N-1} X(k) X^{*}(k) \\
 &= \frac{1}{N} \sum_{k=0}^{N-1} |X(k)|^2 
-\intertext{When this does not hold true, the equation reduced to zero because of the orthogonal property}
+\intertext{When this does not hold true, the equation reduced to zero.}
 \end{align*}
 
 \section{The Computation of the Discrete Fourier Transform}
@@ -213,7 +184,7 @@ Sundararajan explains the proof as the following:
 
 
 \mbox{}	 \\
-\indent Given the Discrete Fourier Transform, it seems in our interest to find a way to compute this value. In \textit{Introduction to Algorithms}, Cormen, Leiserson, Rivest, and Stein introduce the FFT which they claim takes advantage of of the special properties of the complex roots of unity to compute $DFT_n(a)$ in $O(nlog(n))$. For the sake of this implementation, they assume at $n$ is a power of two, mostly because the existing strategies for dealing with the case where $n$ is not a power of two are quite complex. As the runtime of the algorithm suggests, the FFT is a divide and conquer algorithm. Given an $A(x)$, we can represent it as an array $a$ of coefficients. In addition, we must also define the following intermediary functions that will be called in the algorithm:
+\indent Given the Discrete Fourier Transform, it seems in our interest to find a way to compute this value. In \textit{Introduction to Algorithms}, Cormen, Leiserson, Rivest, and Stein introduce the FFT which they claim takes advantage of of the special properties of the complex roots of unity to compute $DFT_n(a)$ in $O(nlog(n))$. This notation determines the upper bound on the runtime for an algorithm. The rudimentary implementation of the DFT is usually done in $O(n^2)$ and will be discussed in a later section. We know that the logarithm function grows slower than the linear function. In computer science, this means that an algorithm in logarithmic time will be faster than a linear function. As a result, we can say that an algorithm in $O(nlog(n))$ time will indeed be faster than an algorithm in $O(n^2)$. This difference in speed becomes increasingly apparent as the amount of operations, or $n$, increases.  For the sake of this implementation, they assume at $n$ is a power of two, mostly because the existing strategies for dealing with the case where $n$ is not a power of two are too lengthy to include here. As the runtime of the algorithm suggests, the FFT is a divide and conquer algorithm. Given a polynomial $A(x)$, we can represent it as an array $a$ of coefficients. In addition, we must also define the following intermediary functions that will be called in the algorithm \cite{Cormen}
 	
 \begin{align*}
 A^{[0]}(x) &= a_0 + a_2x + a_4x^2 + ... + a_{n-2}x^{n/2 - 1} \\
@@ -250,16 +221,10 @@ The following algorithm to find the FFT of $a$ is defined recursively by Cormen 
 \end{algorithmic}
 \end{algorithm}
 
-From this algorithm, we can arrive at the \textbf{Convolution Theorem}, which states that for any two vectors $a$ and $b$, both of which have a length $n$ that is a power of two, the following holds true:
-
-$$
-a \otimes b = DFT_{2n}^{-1}(DFT_{2n}(a) DFT_{2n}(b))
-$$
-
 \subsection{Alternatives for the Fast Fourier Tranform}
 
 \mbox{}	 \\
-\indent In \textit{Introduction to Algorithms}, Cormen, Leiserson, Rivest, and Stein present certain improvements to existing implementation of the FFT. One notable improvement is an iterative implementation of the FFT. In Computer Science, iterative and recursive solutions are often considered equivalent. This is proved in the Church-Turing Thesis. However, there certainly runtime tradeoffs that we sometimes have to make when converting from recursion to iteration and vice-versa. That being said, we make no computational trade-offs in this instance, as our iterative solution still has a runtime of $O(nlog(n))$. In this instance, just like the recursive implementation, $a$ must have a length that is a power of 2. The algorithm for an iterative approach to the FFT is as follows:
+\indent In \textit{Introduction to Algorithms}, Cormen, Leiserson, Rivest, and Stein present certain improvements to existing implementation of the FFT. One notable alternative is an iterative implementation of the FFT. In Computer Science, iterative and recursive solutions are often considered equivalent. This is proved in the Church-Turing Thesis. However, there certainly runtime tradeoffs that we sometimes have to make when converting from recursion to iteration and vice-versa. That being said, we make no computational trade-offs in this instance, as our iterative solution still has a runtime of $O(nlog(n))$. In this instance, just like the recursive implementation, $a$ must have a length that is a power of 2. The algorithm for an iterative approach to the FFT is as follows \cite{Cormen}:
 
 \begin{algorithm}
 \caption{Iterative Implementation of FFT}\label{it-fft}
@@ -299,7 +264,7 @@ $$
 \subsection{A Python Implementation of the Fast Fourier Transform}
 
 \mbox{}	 \\
-\indent In order to better understand the results of the Fast Fourier Transform, it may be useful to write code to explore a Pythonic implementation, and  plot the signals in order to visualize the results of the Fast Fourier Transform. There are existing libraries in Python to aid with the visualization of the Fast Fourier Transformation. These include numpy and matplotlib. Numpy is useful for existing libraries that make it possible to manipulate an entire array with a single operation as well as contains the function to perform the Fast Fourier Transformation. Matplotlib is the library that contains the function to fully plot a dataset. Given a signal, the following method plots both the signal in real space as well as in frequency space:
+\indent In order to better understand the results of the Fast Fourier Transform, it may be useful to write code to explore a Pythonic implementation, and  plot the signals in order to visualize the results of the Fast Fourier Transform. There are existing libraries in Python to aid with the visualization of the Fast Fourier Transformation. These include numpy and matplotlib. Numpy is useful for existing libraries that make it possible to manipulate an entire array with a single operation as well as contains the function to perform the Fast Fourier Transformation \cite{Discrete}. Matplotlib is the library that contains the function to fully plot a dataset. Given a signal, the following method plots both the signal in real space as well as in frequency space:
 
 \begin{Verbatim}[tabsize=4]
 
@@ -314,7 +279,7 @@ def plot_signal(signal):
 	
 \end{Verbatim}
 
-With that information, we are able to quickly find the FFT of different waves in real space in frequency space. Here are a few examples generated as a result of the python code included above. 
+With that information, we are able to quickly find the FFT of different waves in real space in frequency space. Here are a few examples generated as a result of the python code included above \cite{Intuition}. 
 
 \begin{figure}[h]
 \centering
@@ -397,22 +362,26 @@ From this information, we can see that equation $(4)$ yields us with the sum of 
 
 With our understanding of the FFT, Cormen claims that we can find the product of any two polynomials in $O(nlog(n))$ time, a significant asymptotic improvement over $O(n^2)$.  Before starting the explanation of the algorithm, it is important to introduce another way to represent a polynomial, known as the point-value representation. 
 
-The point-value representation of a polynomial $A(x)$ is a set of pairs in the form ${\{(x_0, y_0), (x_1, y_1), ..... , (x_n, y_n)\}}$ such that $y_i = A(x_i)$.  These values can be generated in $O(n^2)$  time using Horner's Metho, but can be reduced to $O(nlog(n))$ time if the values of $x$ are cleverly picked. From this definition, one can conclude that each polynomial has a many different point-value representations. Using this new representation of polynomials, we can indeed determine the product of any two polynomials in $O(n)$ time. Given this information, we can now explore the algorithm to find the product of any two polynomials in $O(nlog(n))$ time. Cormen argues that the following four steps will determine the product of any two polynomials $A(x)$ and $B(x)$ of length n:
+The point-value representation of a polynomial $A(x)$ is a set of pairs in the form ${\{(x_0, y_0), (x_1, y_1), ..... , (x_n, y_n)\}}$ such that $y_i = A(x_i)$.  These values can be generated in $O(n^2)$  time using Horner's Method, but can be reduced to $O(nlog(n))$ time if the values of $x$ are cleverly picked. From this definition, one can conclude that each polynomial has a many different point-value representations. Using this new representation of polynomials, we can indeed determine the product of any two polynomials in point-value form in $O(n)$ time. Given this information, we can now explore the algorithm to find the product of any two polynomials in $O(nlog(n))$ time. Cormen argues that the following four steps will determine the product of any two polynomials $A(x)$ and $B(x)$ of length n:
 
 \begin{enumerate}
-	\item \textit{Double degree-bound: } Create the coefficient representations of $A(x)$ and $B(x)$ of length $2n$ by padding $n$ higher-order coefficients to the left of the array representations of $A(x)$ and $B(x)$. This can be done in $O(n)$ time.
+	\item \textit{Double degree-bound: } Create the coefficient representations of $A(x)$ and $B(x)$ of length $2n$ by padding $n$ higher-order coefficients of 0 to the left of the array representations of $A(x)$ and $B(x)$. This can be done in $O(n)$ time.
 	\item \textit{Evaluate: } Compute the point-value representations of $A(x)$ and $B(x)$ of length $2n$ by applying the FFT of order $2n$ on each polynomial. As a result, we can get the representations at the $(2n)^{th}$ roots of unity. This is done in $O(nlog(n))$ time.
 	\item \textit{Pointwise Multiply: } Multiply these two point-value representations pairwise, yielding us with the value of $C(x) = A(x)B(x)$ at all roots of unity. As explained earlier, this is done in $O(n)$ time.
-	\item \textit{Iterpolate: } We can then create the coefficient representation of polynomial  $C(x)$ by applying the FFT on the point-value representation of $C(x)$. This is done in $O(nlog(n))$ time.
+	\item \textit{Iterpolate: } We can then create the coefficient representation of polynomial  $C(x)$ by applying the FFT on the point-value representation of $C(x)$ to find the inverse DFT. This is done in $O(nlog(n))$ time.
 
 \end{enumerate}
 
-This entire process is done in $O(n + nlog(n) + n + nlog(n))$ time, which can reduce to $O(nlog(n))$ time by the definition of big-$O$ notation. Thus, using the above algorithm, one can multiply any two polynomials in $O(nlog(n))$ time.
+This entire process is done in $O(n + nlog(n) + n + nlog(n))$ time, which can reduce to $O(nlog(n))$ time by the definition of big-$O$ notation. Thus, using the above algorithm, one can multiply any two polynomials in $O(nlog(n))$ time.  From this algorithm, we can arrive at the \textbf{Convolution Theorem}, which states that for any two vectors $a$ and $b$, both of which have a length $n$ that is a power of two where $\otimes$ returns the coefficient representation of the product of the polynomial representations of both $a$ and $b$ , the following holds true \cite{Cormen}.
+
+$$
+a \otimes b = DFT_{2n}^{-1}(DFT_{2n}(a) DFT_{2n}(b))
+$$
 
 \subsection{Image Processing}
 
 \mbox{}	 \\
-\indent According to Gonzalez, ``an image may be defined as a two-dimensional function, $f(x, y)$ where $x$ and $y$ are \textit{spatial} (plane) coordinates, and the amplitude of $f$ at any pair of coordinates $(x, y)$ is called the \textit{intensity} or \textit{gray level} of the image at that point''. In short, an image can be represented by a function that determines the color at a certain pixel. Digital image processing is one of the most widespread fields of study, having applications in virtually every STEM related profession. In addition, digital imaging processing is also not bound to visible light spectrum. We can perform image processing is the Gamma spectrum, X-ray spectrum as well as the Ultraviolet Band. Included are a few examples of imaging outside the visible light spectrum.
+\indent According to Gonzalez, ``an image may be defined as a two-dimensional function, $f(x, y)$ where $x$ and $y$ are \textit{spatial} (plane) coordinates, and the amplitude of $f$ at any pair of coordinates $(x, y)$ is called the \textit{intensity} or \textit{gray level} of the image at that point''. In short, an image can be represented by a function that determines the color at a certain pixel. Digital image processing is one of the most widespread fields of study, having applications in virtually every STEM related profession. In addition, digital imaging processing is also not bound to visible light spectrum. We can perform image processing is the Gamma spectrum, X-ray spectrum as well as the Ultraviolet Band. Included are a few examples of imaging outside the visible light spectrum \cite{Gonzalez}.
 
 \begin{figure}[h]
 \centering
@@ -474,7 +443,7 @@ The two-dimensional DFT is an essential part of modern image processing and is e
 \label{fig:im2}
 \end{figure}
 
-In order to better explain the two-dimensional Discrete Fourier Transform, it may help to suggest a Python implementation for the algorithm to automate the conversion between an image and its Fourier Transform. Just like the one-dimensional Fast Fourier Transform, there are multiple existing tools and libraries to aid with the visualization of the two-dimensional Discrete Fourier Transform. Like the implementation of the 1-D FFT, the method to visualize the 2-D DFT involved numpy and matplotlib. In order to generate images, the 2-D DFT method also involves a library known as Pillow/PIL. Given an image, the following method displays the image as well as it's 2-D Discrete Fourier Transform:
+In order to better explain the two-dimensional Discrete Fourier Transform, it may help to suggest a Python implementation for the algorithm to automate the conversion between an image and its Fourier Transform. Just like the one-dimensional Fast Fourier Transform, there are multiple existing tools and libraries to aid with the visualization of the two-dimensional Discrete Fourier Transform. Like the implementation of the 1-D FFT, the method to visualize the 2-D DFT involved numpy and matplotlib. In order to generate images, the 2-D DFT method also involves a library known as Pillow/PIL. Given an image, the following method displays the image as well as it's 2-D Discrete Fourier Transform \cite{PythonTutorials}
 
 \begin{Verbatim}[tabsize=4]
 
@@ -497,7 +466,7 @@ def plot_2d_dft(image):
 	
 \end{Verbatim}
 
-With this method, we are able to generate the two-dimensional DFT for any black and white image. Here are a few examples of the method being run on the image on the left:
+With this method, we are able to generate the two-dimensional DFT for any black and white image. The two-dimensional DFT  is a vital process in Digital Image Processing. It can effectively decompose an image into its $sine$ and $cosine$ components to further analysis.In addition, it can be used effectively for the removal of additive noise in the frequency domain, so when the inverse two-dimensional DFT is applied, the resulting image looks very similar with certain frequencies filtered out. Here are a few examples of the method being run on the image on the left:
 
 \begin{figure}[h]
 \centering
@@ -538,9 +507,9 @@ With this method, we are able to generate the two-dimensional DFT for any black 
 \subsection{Audio Compression}
 
 \mbox{}	 \\
-\indent Audio compression is an incredibly important field of study that attempts to address human and computer limitations on audio in order to effectively transmit information. In \textit{Audio Compression using Fourier Transform}, Perinati Tewari describes audio compression is the idea of encoding audio data to not only occupy less storage, but also less bandwidth for transmission. That being said, there are two conventional categories for compression, both of which are applicable for this algorithm: lossless and lossy compression. Tewari claims that lossless compression is done using various waveform coding techniques. What this means is that these techniques approximate the waveform with a more easily representable with a different sinusoidal function, and if the bit rate is large enough, get arbitrarily close to the original wave. A common technique is pulse code modulation (PCM), which is used by the CD. CD audio signals are conventionally samples at 44.1 kHz and traditionally add additional noise to the audio. However, this additional noise is not noticeable by the overwhelming majority of humans if the signal energy is large enough. In lossless compression, as highlighted, information is not lost. On the other hand, loss compression reduces redundancies  and any sounds that are considered irrelevant are either removes or significantly reduced.
+\indent Audio compression is an incredibly important field of study that attempts to address human and computer limitations on audio in order to effectively transmit information. Audio compression is the idea of encoding audio data to not only occupy less storage, but also less bandwidth for transmission. That being said, there are two conventional categories for compression, both of which are applicable for this algorithm: lossless and lossy compression. Tewari claims that lossless compression is done using various waveform coding techniques. What this means is that these techniques approximate the waveform with a more easily representable with a different sinusoidal function, and if the bit rate is large enough, get arbitrarily close to the original wave. A common technique is pulse code modulation (PCM), which is used by the CD. CD audio signals are conventionally samples at 44.1 kHz and traditionally add additional noise to the audio. However, this additional noise is not noticeable by the overwhelming majority of humans if the signal energy is large enough. In lossless compression, as highlighted, information is not lost. On the other hand, loss compression reduces redundancies  and any sounds that are considered irrelevant are either removes or significantly reduced \cite{Tewari}.
 
-With that information, it becomes easy to imagine why the Fourier Transform is important for Audio Compression. More specifically, the FFT can be applied to a audio signal to convert it to an approximate, much smaller signal. In addition, before beginning, Tewari states that most audio compression software makes use of the psycho-acoustic properties of the human auditory system. This is an important note given that audio compression algorithms are allows to make discretionary decisions because audio compression is always ``filtered'' through the human ear. 
+With that information, it becomes easy to imagine why the Fourier Transform is important for Audio Compression. More specifically, the FFT can be applied to a audio signal to convert it to an approximate, much smaller signal. In addition, before beginning, Tewari states that most audio compression software makes use of the psycho-acoustic properties of the human auditory system. This is an important note given that audio compression algorithms are allowed to make discretionary decisions because audio compression is always ``filtered'' through the human ear. 
 
 Tewari proposes the following algorithm for using FFT to compress an audio signal:
 
@@ -548,7 +517,7 @@ Tewari proposes the following algorithm for using FFT to compress an audio signa
 
 	\item \textit{Level Detection: }The start of an input audio signal is identified by a stored threshold value
 	\item \textit{Framing: }The continuous signal is blocked into frames of N samples. It is important to note that each frame overlaps with subsequent frames,  a technique known as framing.
-	\item \textit{Windowing: }After framing, windowing is applied to prevent leakage. A windows is a shape that is nonzero for a certain period of time, and zero before and after that period. Thus, when a window is multiplied by a certain signal, it is zero everywhere except during of the nonzero period.
+	\item \textit{Windowing: }After framing, windowing is applied to prevent leakage. A window is a shape that is nonzero for a certain period of time, and zero before and after that period. Thus, when a window is multiplied by a certain signal, it is zero everywhere except during of the nonzero period.
 	\item \textit{Fast Fourier Transform: }The FFT is applied to compute the DFT to conver the time domain signal into a frequency domain to yield a complex signal. It is important to note that the signal's FFT has both complex and real parts, as the FFT is expected to yield
 	\item \textit{Power Spectrum Calculation: }The power of the frequency domain is calculated by summing the square of the real and imaginary components of the signal to yield a real signal. The second half of the samples are always ignored in this case because they are symmetric to the first half.
 	\item \textit{Approximate Singal: }We can then build an approximate signal by taking the maximum frequency components of the maximum power frame
@@ -566,7 +535,7 @@ In general, this algorithm is effective in using FFT reduce noise while still ma
 
 \begin{enumerate}
 	\item The input data are normalized, so that each attribute falls within the same range. The normalization scale that is chosen is mostly a design decision, but the most common is $z$-score normalization. This step helps ensure that the attributes with large domains will not dominate attributes with smaller domains.
-	\item PCA then computes $k$ orthonormal vectors that provide a basis for the normalized input data. These are unit vectors that each point in a direction perpendicular to the others. These are unit vectors that each point in a direction perpendicular. This means that the dot-product of any two vectors must be $0$. These vectors are commonly refered to as the \textit{principal components}. The input data are a linear combination of the principal components.
+	\item PCA then computes $k$ orthonormal vectors that provide a basis for the normalized input data. These are unit vectors that each point in a direction perpendicular to the others. These are unit vectors that each point in a direction perpendicular. This means that the dot-product of any two vectors must be $0$. Any orthonormal basic can be chosen, but the standard  basis is conventionally chosen. These vectors are commonly refered to as the \textit{principal components}. The input data are a linear combination of the principal components.
 	\item The principal components are then sorted in order of decreasing "significance" or strength. The principal components essentially serve as a new set of axes for the data, providing important information about variance. That is, the sorted axes are such that the first axis shows the most variance among the data, the second axis shows the next highest variance, and so on.
 	\item As a result, the data size can be reduced by eliminating the weaker components, while still maintaining a very good approximation of the original data.
 
@@ -597,13 +566,17 @@ In short, while the FFT and DFT have more specific prerequisites for the signal,
 
 \bibitem{Bishop} Bishop, C. M. (2016). \emph{Pattern Recognition and Machine} Learning. New York: Springer.
 
+\bibitem{Bracewell} Bracewell, R. N. (2000) \emph{The Fourier Transform and its Applications} McGraw-Hill Higher Education
+
 \bibitem{Cormen} Cormen, T. H., Leiserson, C. E., Rivest, R. L., \& Stein, C. (2009). \emph{Introduction to Algorithms}. Cambridge (Massachusetts): The MIT Press.
 
 \bibitem{Discrete} \emph{Discrete Fourier Transform (numpy.fft)}. NumPy v1.16 Manual. \url{https://docs.scipy.org/doc/numpy/reference/routines.fft.html.} Accessed 2 April 2019
 
+\bibitem{Dym} Dym, H \& McKean, H. P. (1972) \emph{Fourier Series and Integrals} Probability and Mathematical Statististics No. 14, New York and London, Academic Press
+
 \bibitem{Galvao} Galvao, M. (2013, May 14). \emph{Windowing an audio signal}. Computer Music. \url{https://sites.uci.edu/computermusic/2013/05/14/windowing-an-audio-signal/.} Accessed 2 April 2019
 
-\bibitem{Gonzalez} Gonzalez, R. C., \& Woods, R. E. (2008). \emph{Digital Image Processing.} Upper Saddle RIver: Pearson Prentice Hall.
+\bibitem{Gonzalez} Gonzalez, R. C., \& Woods, R. E. (2008). \emph{Digital Image Processing.} Upper Saddle River: Pearson Prentice Hall.
 
 \bibitem{Han} Han, J., \& Kamber, M. (2012). \emph{Data Mining: Concepts and Techniques}. Haryana, India: Elsevier.
 

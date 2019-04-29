@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  1 APR 2019 23:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  28 APR 2019 21:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -440,168 +440,180 @@ e
 \tf@toc=\write5
 \openout5 = `FourierTransforms.toc'.
 
- [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+ [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] 
+[3]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [3]
-[4]
-Underfull \vbox (badness 3039) has occurred while \output is active []
-
- [5]
-[6]
+ [4]
+[5]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7]
+ [6]
+[7]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 228.
-
-[8] [9]
-<images/FFTOriginal1.png, id=179, 462.528pt x 346.896pt>
+put line 199.
+ [8]
+<images/FFTOriginal1.png, id=193, 462.528pt x 346.896pt>
 File: images/FFTOriginal1.png Graphic file (type png)
 <use images/FFTOriginal1.png>
-Package pdftex.def Info: images/FFTOriginal1.png  used on input line 323.
+Package pdftex.def Info: images/FFTOriginal1.png  used on input line 288.
 (pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
-<images/FFTResult1.png, id=181, 462.528pt x 346.896pt>
+<images/FFTResult1.png, id=195, 462.528pt x 346.896pt>
 File: images/FFTResult1.png Graphic file (type png)
 <use images/FFTResult1.png>
-Package pdftex.def Info: images/FFTResult1.png  used on input line 329.
+Package pdftex.def Info: images/FFTResult1.png  used on input line 294.
 (pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
-<images/FFTOriginal2.png, id=182, 462.528pt x 346.896pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
+<images/FFTOriginal2.png, id=202, 462.528pt x 346.896pt>
 File: images/FFTOriginal2.png Graphic file (type png)
 <use images/FFTOriginal2.png>
-Package pdftex.def Info: images/FFTOriginal2.png  used on input line 342.
+Package pdftex.def Info: images/FFTOriginal2.png  used on input line 307.
 (pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
-<images/FFTResult2.png, id=183, 462.528pt x 346.896pt>
+<images/FFTResult2.png, id=203, 462.528pt x 346.896pt>
 File: images/FFTResult2.png Graphic file (type png)
 <use images/FFTResult2.png>
-Package pdftex.def Info: images/FFTResult2.png  used on input line 348.
+Package pdftex.def Info: images/FFTResult2.png  used on input line 313.
 (pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
-<images/FFTOriginal3.png, id=184, 462.528pt x 346.896pt>
+<images/FFTOriginal3.png, id=204, 462.528pt x 346.896pt>
 File: images/FFTOriginal3.png Graphic file (type png)
 <use images/FFTOriginal3.png>
-Package pdftex.def Info: images/FFTOriginal3.png  used on input line 360.
+Package pdftex.def Info: images/FFTOriginal3.png  used on input line 325.
 (pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
-<images/FFTResult3.png, id=185, 462.528pt x 346.896pt>
+<images/FFTResult3.png, id=205, 462.528pt x 346.896pt>
 File: images/FFTResult3.png Graphic file (type png)
 <use images/FFTResult3.png>
-Package pdftex.def Info: images/FFTResult3.png  used on input line 366.
+Package pdftex.def Info: images/FFTResult3.png  used on input line 331.
 (pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
+
+[10 <./images/FFTOriginal1.png> <./images/FFTResult1.png> <./images/FFTOriginal
+2.png> <./images/FFTResult2.png> <./images/FFTOriginal3.png> <./images/FFTResul
+t3.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]
+[12]
+<images/gamma.png, id=240, 257.96375pt x 220.825pt>
+File: images/gamma.png Graphic file (type png)
+<use images/gamma.png>
+Package pdftex.def Info: images/gamma.png  used on input line 390.
+(pdftex.def)             Requested size: 64.49077pt x 55.2061pt.
+<images/xray.png, id=241, 253.94875pt x 207.77625pt>
+File: images/xray.png Graphic file (type png)
+<use images/xray.png>
+Package pdftex.def Info: images/xray.png  used on input line 396.
+(pdftex.def)             Requested size: 63.48703pt x 51.94392pt.
+<images/uv.png, id=242, 253.94875pt x 250.9375pt>
+File: images/uv.png Graphic file (type png)
+<use images/uv.png>
+Package pdftex.def Info: images/uv.png  used on input line 402.
+(pdftex.def)             Requested size: 63.48703pt x 62.7342pt.
+<images/dftimage1.png, id=243, 250.9375pt x 187.70125pt>
+File: images/dftimage1.png Graphic file (type png)
+<use images/dftimage1.png>
+Package pdftex.def Info: images/dftimage1.png  used on input line 426.
+(pdftex.def)             Requested size: 80.30164pt x 60.06561pt.
+<images/dftimage2.png, id=244, 245.91875pt x 183.68625pt>
+File: images/dftimage2.png Graphic file (type png)
+<use images/dftimage2.png>
+Package pdftex.def Info: images/dftimage2.png  used on input line 432.
+(pdftex.def)             Requested size: 78.6956pt x 58.78079pt.
+<images/dftimage3.png, id=245, 302.12875pt x 224.84pt>
+File: images/dftimage3.png Graphic file (type png)
+<use images/dftimage3.png>
+Package pdftex.def Info: images/dftimage3.png  used on input line 438.
+(pdftex.def)             Requested size: 75.532pt x 56.20985pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[10 <./images/FFTOriginal1.png> <./images/FFTResult1.png> <./images/FFTOriginal
-2.png> <./images/FFTResult2.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11 <./images/FFTOriginal3.png> <./images/FFTResult3.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [12]
-<images/gamma.png, id=217, 257.96375pt x 220.825pt>
-File: images/gamma.png Graphic file (type png)
-<use images/gamma.png>
-Package pdftex.def Info: images/gamma.png  used on input line 421.
-(pdftex.def)             Requested size: 64.49077pt x 55.2061pt.
-<images/xray.png, id=218, 253.94875pt x 207.77625pt>
-File: images/xray.png Graphic file (type png)
-<use images/xray.png>
-Package pdftex.def Info: images/xray.png  used on input line 427.
-(pdftex.def)             Requested size: 63.48703pt x 51.94392pt.
-<images/uv.png, id=219, 253.94875pt x 250.9375pt>
-File: images/uv.png Graphic file (type png)
-<use images/uv.png>
-Package pdftex.def Info: images/uv.png  used on input line 433.
-(pdftex.def)             Requested size: 63.48703pt x 62.7342pt.
-<images/dftimage1.png, id=220, 250.9375pt x 187.70125pt>
-File: images/dftimage1.png Graphic file (type png)
-<use images/dftimage1.png>
-Package pdftex.def Info: images/dftimage1.png  used on input line 457.
-(pdftex.def)             Requested size: 80.30164pt x 60.06561pt.
-<images/dftimage2.png, id=221, 245.91875pt x 183.68625pt>
-File: images/dftimage2.png Graphic file (type png)
-<use images/dftimage2.png>
-Package pdftex.def Info: images/dftimage2.png  used on input line 463.
-(pdftex.def)             Requested size: 78.6956pt x 58.78079pt.
-<images/dftimage3.png, id=222, 302.12875pt x 224.84pt>
-File: images/dftimage3.png Graphic file (type png)
-<use images/dftimage3.png>
-Package pdftex.def Info: images/dftimage3.png  used on input line 469.
-(pdftex.def)             Requested size: 75.532pt x 56.20985pt.
-
 [13 <./images/gamma.png> <./images/xray.png> <./images/uv.png>]
-<images/dftraw1.png, id=232, 516.93124pt x 487.8225pt>
+<images/dftraw1.png, id=256, 516.93124pt x 487.8225pt>
 File: images/dftraw1.png Graphic file (type png)
 <use images/dftraw1.png>
-Package pdftex.def Info: images/dftraw1.png  used on input line 506.
+Package pdftex.def Info: images/dftraw1.png  used on input line 475.
 (pdftex.def)             Requested size: 155.08057pt x 146.34787pt.
 
-Overfull \hbox (11.08276pt too wide) in paragraph at lines 506--507
+Overfull \hbox (11.08276pt too wide) in paragraph at lines 475--476
  [][] 
  []
 
-<images/2ddft1.png, id=233, 516.93124pt x 487.8225pt>
+<images/2ddft1.png, id=257, 516.93124pt x 487.8225pt>
 File: images/2ddft1.png Graphic file (type png)
 <use images/2ddft1.png>
-Package pdftex.def Info: images/2ddft1.png  used on input line 512.
+Package pdftex.def Info: images/2ddft1.png  used on input line 481.
 (pdftex.def)             Requested size: 155.08057pt x 146.34787pt.
 
-Overfull \hbox (11.08276pt too wide) in paragraph at lines 512--513
+Overfull \hbox (11.08276pt too wide) in paragraph at lines 481--482
  [][] 
  []
 
-[14 <./images/dftimage1.png> <./images/dftimage2.png> <./images/dftimage3.png>]
-<images/circles.png, id=242, 256.96pt x 256.96pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/circles.png, id=258, 256.96pt x 256.96pt>
 File: images/circles.png Graphic file (type png)
 <use images/circles.png>
-Package pdftex.def Info: images/circles.png  used on input line 524.
+Package pdftex.def Info: images/circles.png  used on input line 493.
 (pdftex.def)             Requested size: 141.32843pt x 141.32843pt.
-<images/2ddft2.png, id=243, 256.96pt x 256.96pt>
+<images/2ddft2.png, id=259, 256.96pt x 256.96pt>
 File: images/2ddft2.png Graphic file (type png)
 <use images/2ddft2.png>
-Package pdftex.def Info: images/2ddft2.png  used on input line 530.
+Package pdftex.def Info: images/2ddft2.png  used on input line 499.
 (pdftex.def)             Requested size: 154.17719pt x 154.17719pt.
 
-Overfull \hbox (10.17938pt too wide) in paragraph at lines 530--531
+Overfull \hbox (10.17938pt too wide) in paragraph at lines 499--500
  [][] 
  []
 
-[15 <./images/dftraw1.png> <./images/2ddft1.png (PNG copy)> <./images/circles.p
-ng> <./images/2ddft2.png (PNG copy)>] [16] [17]
-<images/pca.png, id=268, 534.99875pt x 122.4575pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 2111) has occurred while \output is active []
+
+ [14 <./images/dftimage1.png> <./images/dftimage2.png> <./images/dftimage3.png>
+] [15 <./images/dftraw1.png> <./images/2ddft1.png (PNG copy)> <./images/circles
+.png> <./images/2ddft2.png (PNG copy)>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16]
+[17]
+<images/pca.png, id=295, 534.99875pt x 122.4575pt>
 File: images/pca.png Graphic file (type png)
 <use images/pca.png>
-Package pdftex.def Info: images/pca.png  used on input line 585.
+Package pdftex.def Info: images/pca.png  used on input line 554.
 (pdftex.def)             Requested size: 321.00172pt x 73.47505pt.
  [18 <./images/pca.png>]
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 612--613
+Underfull \hbox (badness 10000) in paragraph at lines 585--586
 []\OT1/cmr/m/n/8 PythonTutorials. (2017, Sep-tem-ber 15). GitHub. \OT1/cmr/m/it
 /8 https://github.com/damian-
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 622.
-[20]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 622.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 595.
+[19]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 595.
  (./FourierTransforms.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 622.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 622.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 595.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 595.
 Package rerunfilecheck Info: File `FourierTransforms.out' has not changed.
-(rerunfilecheck)             Checksum: C1B975F23F40665C9E1E36DAFBF15617;1796.
+(rerunfilecheck)             Checksum: 0358D71EDBF12BF142EFAC5DA3A214AC;1796.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 622.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 595.
  ) 
 Here is how much of TeX's memory you used:
- 8682 strings out of 492649
- 128401 string characters out of 6129622
- 218374 words of memory out of 5000000
- 12201 multiletter control sequences out of 15000+600000
+ 8685 strings out of 492649
+ 128432 string characters out of 6129622
+ 223432 words of memory out of 5000000
+ 12203 multiletter control sequences out of 15000+600000
  12189 words of font info for 47 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 36i,12n,39p,1414b,536s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,12n,39p,1457b,536s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
@@ -620,10 +632,10 @@ ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2018/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2018/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on FourierTransforms.pdf (20 pages, 1897961 bytes).
+Output written on FourierTransforms.pdf (19 pages, 1901610 bytes).
 PDF statistics:
- 383 PDF objects out of 1000 (max. 8388607)
- 309 compressed objects within 4 object streams
- 92 named destinations out of 1000 (max. 500000)
+ 398 PDF objects out of 1000 (max. 8388607)
+ 325 compressed objects within 4 object streams
+ 93 named destinations out of 1000 (max. 500000)
  262 words of extra memory for PDF output out of 10000 (max. 10000000)
 
