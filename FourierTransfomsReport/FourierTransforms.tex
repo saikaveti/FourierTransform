@@ -29,7 +29,7 @@
 
 \author{Sailesh Kaveti}
 
-\renewcommand{\baselinestretch}{1.25}
+\renewcommand{\baselinestretch}{1.26}
 
 \begin{document}
 
@@ -91,12 +91,12 @@ $$
 \subsection{Developing an Intuition for the Fourier Transform}
 
 \mbox{}	\\
-\indent Imagine we are given we are given a bucket of paint, and asked to replicate the color of that bucket. At first, it seems easy to simply describe it nominally, calling the bucket of paint as red, yellow, blue, or any other color.  This is a valid first instinct. However, imagine you were given a purple bucket of paint. Even in this instance, most people are familiar with the color purple and we could just mix equal parts of blue and red. Imagine you were given a bucket of paint that was dark purple. We could still call this bucket “dark purple”, but we would immediately run into problems when replicating the paint color. Do we need to put the colors on a 2:1 ratio or a 3:1 ratio? In general, given a color, it can be very useful to know the colors that compose that color, as opposed to just a nominal description. Now imagine that we were given a complex wave, and that we are interested in the simpler waves that compose that wave. The Fourier Transform helps us determine a periodic wave's composite frequencies.
+\indent Imagine we are given we are given a bucket of paint, and asked to replicate the color of that bucket. At first, it seems easy to simply describe it nominally, calling the bucket of paint as red, yellow, blue, or any other color.  This is a valid first instinct. However, imagine you were given a purple bucket of paint. Even in this instance, most people are familiar with the color purple and we could just mix equal parts of blue and red. Imagine you were given a bucket of paint that was dark purple. We could still call this bucket “dark purple”, but we would immediately run into problems when replicating the paint color. Do we need to put the colors on a 2:1 ratio or a 3:1 ratio? In general, given a color, it can be very useful to know the colors that compose that color, as opposed to just a nominal description. Now imagine that we were given a complex sinusoid, and that we are interested in the simpler sinusoids that compose that sinusoid. The Fourier Transform helps us determine a periodic wave's composite frequencies.
 
 \subsection{The Fourier Series}
 
 \mbox{}	\\
-\indent In order to understand the Fourier Transform, it is very important to gain understand the Fourier Series and its integral and the Fourier Transform is non-discretized extension of the Fourier Series. According to Dym and McKean, the authors of \textit{Fourier Series and Integrals}, the basic idea of the Fourier Series is that any periodic function $f(t)$ can be expressed as a trigonometric sum of sines and cosines. More specifically, for the same period T for both $sine$ and $cosine$, we can claim the following:
+\indent In order to understand the Fourier Transform, it is very important to gain an understanding the Fourier Series and its integral and the Fourier Transform is non-discretized extension of the Fourier Series. According to Dym and McKean, the authors of \textit{Fourier Series and Integrals}, the basic idea of the Fourier Series is that any periodic function $f(t)$ can be expressed as a trigonometric sum of sines and cosines. More specifically, for the same period T for both $sine$ and $cosine$, we can claim the following:
 
 $$
 f(t) = \sum_{n = 0}^{\infty} [\hat f_+(n)\cos \Big(\frac{\pi n t}{T}\Big) + \hat f_-(n)\sin \Big(\frac{\pi n t}{T}\Big)]
@@ -140,6 +140,8 @@ f(x)  &= \int_{-\infty}^{\infty} F(s) (cos(2 \pi x s) + isin(2 \pi x s))ds
 
 As a result, we can see a resemblance of a non-discretized version of the Fourier Series. As mentioned earlier, the Fourier series can represent a periodic function with a discrete sum, while the Fourier transform results in a more general, nonperiodic function over a continuous domain. We can equivalently say that the Fourier transform is the limit of the Fourier series as the limit of the period of the function approaches infinity, thus changing the bounds of integration from $(-L,L)$ to $(-\infty,+\infty)$. We can discretize for more interesting results in the following section.
 
+It is important to note that the functions that are part of the Fourier Transform must be part of a linear system. This means that they are closed under scalar multiplication as well as addition. This allows the system to properly be composed together in order to create the original formula via the Inverse Fourier Transform.
+
 \section{The Discrete Fourier Transform}
 
 \subsection{The Basics of the Discrete Fourier Transform}
@@ -151,16 +153,16 @@ As a result, we can see a resemblance of a non-discretized version of the Fourie
 \intertext{The Fourier Transform:}
 F(s)  &= \int_{-\infty}^{\infty} f(x) e^{-i2 \pi x s}dx
 \intertext{The Discrete Fourier Transform:}
-F(s) &=  \sum_{x=0}^{N-1} f(x) e^{-i2 \pi x s / N}
+F[s] &=  \sum_{x=0}^{N-1} f[x] e^{-i2 \pi x s / N}
 \intertext{The Inverse Fourier Transform:}
 f(x)  &= \int_{-\infty}^{\infty} F(s) e^{i2 \pi x s}ds
 \intertext{The Inverse Discrete Fourier Transform}
-f(x) &= \frac{1}{N} \sum_{s=0}^{N-1} F(s) e^{i2 \pi x s / N}
+f[x] &= \frac{1}{N} \sum_{s=0}^{N-1} F[s] e^{i2 \pi x s / N}
 \end{align*}
 
 The DFT is able to transform a $N$-point time-domain sequence into a set of $N$ frequency coefficients that represent the given time-domain sequence in frequency domain. These coefficients represent amplitudes of the composite $sine$ and $cosine$ counterparts which arise from the $e^{-i2 \pi x s / N}$ term. The function is a summation of sinusoidal waves each with its own coefficient. When these composite functions are added, the original time-domain sampling of points can be found. However, we are presented with a strange dilemma. It doesn't seem intuitive to represent a finite length sequence with a sum of infinite sinusoidal waves. However, any finite length sequence that is the sum of sinusoidal waves must be periodic, and thus can be extended periodically. On the other hand, the IDFT can transform the $N$ frequency coefficients back into the original set of $N$ time-domain samples by creating a composition of the sinusoidal waves to generate the original signal. Thus, every signal has two characterizations: its $N$ time-domain samples or its $N$ frequency coefficients \cite{Sundararajan}.
 
-There are also several interesting properties of the Discrete Fourier Transformation that hold true that allow for more informative results. An example of such a property is known as \textbf{Parseval's Theorem}. This theorem implies that the sums of the squared magnitudes of the signal and the DFT sequences are directly related by the constant $N$, which has already been established as the number of samples. Let $x(n)$ be the original function and and $X$ be the set of frequencies such that $X(k)$ is the $k^{th}$ frequency. For reference, $W_{N}^{nk} = cos(\frac{2\pi}{N}nk) - isin(\frac{2\pi}{N}nk)$. Mathematically, we can write that
+There are also several interesting properties of the Discrete Fourier Transformation that hold true that allow for more informative results. An example of such a property is known as \textbf{Parseval's Theorem}. This theorem implies that the sums of the squared magnitudes of the signal and the DFT sequences are directly related by the constant $N$, which has already been established as the number of samples. Parseval's Theorem is particularly important because it allows us to say that the energy of a signal is equal in both frequency and time space. Let $x(n)$ be the original function and and $X$ be the set of frequencies such that $X(k)$ is the $k^{th}$ frequency. For reference, $W_{N}^{nk} = cos(\frac{2\pi}{N}nk) - isin(\frac{2\pi}{N}nk)$. Mathematically, we can write that
 
 $$
 \sum_{n=0}^{N-1} |x(n)|^2 = \frac{1}{N} \sum_{k=0}^{N-1} |X(k)|^2
@@ -285,13 +287,13 @@ With that information, we are able to quickly find the FFT of different waves in
 \centering
 \begin{subfigure}{.4\textwidth}
 	\centering
-	\includegraphics[scale=.3]{images/FFTOriginal1.png}
+	\includegraphics[scale=.25]{images/FFTOriginal1.png}
 	\caption{Real Space}
 	\label{fig:sub1}
 \end{subfigure} %
 \begin{subfigure}{.4\textwidth}
 	\centering
-	\includegraphics[scale=.3]{images/FFTResult1.png}
+	\includegraphics[scale=.25]{images/FFTResult1.png}
 	\caption{Frequency Space}
 	\label{fig:sub2}
 \end{subfigure}
@@ -304,13 +306,13 @@ With that information, we are able to quickly find the FFT of different waves in
 \centering
 \begin{subfigure}{.4\textwidth}
 	\centering
-	\includegraphics[scale=.3]{images/FFTOriginal2.png}
+	\includegraphics[scale=.25]{images/FFTOriginal2.png}
 	\caption{Real Space}
 	\label{fig:sub3}
 \end{subfigure} %
 \begin{subfigure}{.4\textwidth}
 	\centering
-	\includegraphics[scale=.3]{images/FFTResult2.png}
+	\includegraphics[scale=.25]{images/FFTResult2.png}
 	\caption{Frequency Space}
 	\label{fig:sub4}
 \end{subfigure}
@@ -322,19 +324,21 @@ With that information, we are able to quickly find the FFT of different waves in
 \centering
 \begin{subfigure}{.4\textwidth}
 	\centering
-	\includegraphics[scale=.3]{images/FFTOriginal3.png}
+	\includegraphics[scale=.25]{images/FFTOriginal3.png}
 	\caption{Real Space}
 	\label{fig:sub3}
 \end{subfigure} %
 \begin{subfigure}{.4\textwidth}
 	\centering
-	\includegraphics[scale=.3]{images/FFTResult3.png}
+	\includegraphics[scale=.25]{images/FFTResult3.png}
 	\caption{Frequency Space}
 	\label{fig:sub4}
 \end{subfigure}
 \caption{Wave 3 and its Fast Fourier Transform}
 \label{fig:text3}
 \end{figure}
+
+It is important to note that these frequencies are reflected so that the frequencies to one side are positive while the other ones are negative.
 \section{Applications of the Fourier Transform}
 
 \subsection{Multiplication of Polynomials}
@@ -466,7 +470,7 @@ def plot_2d_dft(image):
 	
 \end{Verbatim}
 
-With this method, we are able to generate the two-dimensional DFT for any black and white image. The two-dimensional DFT  is a vital process in Digital Image Processing. It can effectively decompose an image into its $sine$ and $cosine$ components to further analysis.In addition, it can be used effectively for the removal of additive noise in the frequency domain, so when the inverse two-dimensional DFT is applied, the resulting image looks very similar with certain frequencies filtered out. Here are a few examples of the method being run on the image on the left:
+With this method, we are able to generate the two-dimensional DFT for any black and white image. The two-dimensional DFT  is a vital process in Digital Image Processing. It can effectively decompose an image into its $sine$ and $cosine$ components to further analysis. In addition, it can be used effectively for the removal of additive noise in the frequency domain, so when the inverse two-dimensional DFT is applied, the resulting image looks very similar with certain frequencies filtered out. Here are a few examples of the method being run on the image on the left:
 
 \begin{figure}[h]
 \centering
@@ -551,14 +555,16 @@ An important note is that the FFT makes several assumptions about the data that 
 That being said, PCA is not inherently capable of replicating the results of a FFT. PCA is, at its core, a data compression algorithm.  From Christopher Bishop's \textit{Pattern Recognition and Machine Learing}, the following example is the result of the PCA algorithm performed on an image, with $M$ representing the number principal components.
 
 \begin{figure}[h]
-	\includegraphics[scale=.6]{images/pca.png}
+	\includegraphics[scale=.65]{images/pca.png}
 	\caption{PCA on an image with different number of principal components}
 	\label{fig:pca}
 \end{figure}
 
-As seen, we can choose to refine the number of attributes that we keep, making the result of our PCA analysis very similar to the original. Such a property is not available in our implementation of the Discrete Fourier Transform. As seen earlier, the DFT automatically retains the frequencies that compose the rest of the image. In addition, the DFT holds the property that it can be easily reverted with the IDFT, something that does not equivalently exist in PCA. While there are image processing techniques that are capable of sharpening an image, they are not an inverse of PCA. The fact that the DFT has an inverse function makes it an extremely valuable transformation when compared to machine learning data reduction algorithms such as PCA.
+As seen, we can choose to refine the number of attributes that we keep, making the result of our PCA analysis very similar to the original. Such a property is not available in our implementation of the Discrete Fourier Transform. As seen earlier, the DFT automatically retains the frequencies that compose the rest of the image. In addition, the DFT holds the property that it can be easily reverted with the IDFT, something that does not equivalently exist in PCA. 
 
-In short, while the FFT and DFT have more specific prerequisites for the signal, they are more informative and effective in generating composite frequencies. The FFT algorithm is extremely effective in decomposing images quickly as long as they exist on the real space, while the PCA algorithm is effective in breaking down a numeric dataset into fewer, more valuable attributes.
+While there are image processing techniques that are capable of sharpening an image, they are not an inverse of PCA. The fact that the DFT has an inverse function makes it an extremely valuable transformation when compared to machine learning data reduction algorithms such as PCA. 
+
+In short, while the FFT and DFT have more specific prerequisites for the signal, they are more informative and effective in generating composite frequencies. The FFT algorithm is extremely effective in decomposing images quickly as long as they exist on the real space, while the PCA algorithm is effective in breaking down a numeric dataset into fewer, more valuable attributes. Despite rather niche applications in image processing, PCA still remains an essential algorithm in Machine Learning.
 
 \newpage
 
